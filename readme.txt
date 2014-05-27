@@ -12,10 +12,10 @@ Helps you increase sales conversions by decreasing the response time under 1 min
 
 59sec lite helps companies to answer leads (or new contacts) under 59 seconds. 
 
-<b>Why? </b>
+**Why?**
 Because studies done by MIT and Kellogg (published on Forbes) show that answering a lead in 5 minutes versus 30 seconds means 21x more chances to close the sale. So, we are helping you answer under 1 minute, not in 5. :)
 
-<b>How? </b>
+**How?**
 Via instant notifications: when a new Contact Form 7 form is submitted, all sales agents get a push notification on their iOS and Android devices
 Also, 59sec lite has a lead management procedure to help the sales team nurture the lead until it become a sale.
 
@@ -30,6 +30,7 @@ Under notification tab, you will get a Secret Key (32 chars, alpha numeric). Ins
 That's it! You can start testing it.
 
 Recommended procedure:
+
 Step 1. After the sales agents are notified of a new lead, one of them will enter on the site (via phone/tablet or computer) to actually grab the lead. The counter will stop, so the sales manager will know how lazy or how professionals are they.
 Step 2. After grabbing the lead, the sales agent should immediately call the potential client.
 Step 3. After the call, the sales agent should set the right status of the lead + enter some details. The lead nurturing should continue, until the status become final.
