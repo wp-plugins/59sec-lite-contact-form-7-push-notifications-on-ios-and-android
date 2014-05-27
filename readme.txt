@@ -6,11 +6,13 @@ Requires at least: 3.3
 Tested up to: 3.9.1.  
 Stable tag: 1
 
-Helps you increase sales conversions by decreasing the response time under 1 minute. Faster you answer your leads, more clients you have.
+Increase sales conversions by decreasing the response time under 59 seconds. Delivers Contact Form 7 leads via push notifications on your mobile. A "MUST-HAVE" tool for more and happier clients!  
 
 == Description ==
 
 59sec lite helps companies to answer leads (or new contacts) under 59 seconds! This will BOOST your conversion rate, because the potential clients will be blown away by your responsiveness and professionalism :)
+
+
 
 **Why should you use 59sec?**
 
@@ -18,6 +20,8 @@ Because studies done by MIT and Kellogg [http://www.forbes.com/sites/marketshare
 
 When a new Contact Form 7 form is submitted, all sales agents get a push notification on their iOS and Android devices!
 Also, 59sec lite has a lead management procedure to help the sales team nurture the lead until it become a sale.
+
+
 
 **How it works (technically speaking)?**
 
@@ -30,6 +34,8 @@ Third, you put everybody from the sales team to install the mobile apps (iOS and
 Under notification tab, you will get a Secret Key (32 chars, alpha numeric). Insert this key on the mobile app, to connect the app to your site.
 
 That's it! You can start testing it.
+
+
 
 **Recommended lead management procedure:**
 
@@ -44,6 +50,7 @@ Step 4. Look at the statistics, so you know how good/bad is the situation.
 Using 59sec lite really boost conversion, if it's done properly. Just do it properly then :)
 
 
+
 **How can you test 59sec lite before installing it on your own site?**
 
 Visit www.59sec.com/test/. 
@@ -55,6 +62,7 @@ Connect the 59sec mobile app to the http://www.59sec.com/test/ with the Secret K
 Test it, by writing something in the test contact form.
 
 Login into http://www.59sec.com/test/wp-login.php, with user test and password 123456789 to see what a sales agents sees. :)
+
 
 
 **If you want much more features, test for free 59sec PRO, available on http://www.59sec.com**
@@ -73,5 +81,5 @@ Under notification tab, you will get a Secret Key (32 chars, alpha numeric). Ins
 
 That's it! You can start testing it on your own server :).
 
-If you need help, tips & tricks, support, contact us via http://www.59sec.com :) Thanks in advance!
+If you need help, tips & tricks, support, contact us via http://www.59sec.com :) Thanks in advance! 
 
