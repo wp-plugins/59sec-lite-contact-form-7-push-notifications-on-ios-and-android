@@ -1,7 +1,7 @@
-=== 59sec lite ===
+=== 59sec lite - Contact Form 7 Push Notifications on iOS and Android===
 
 Contributors: kuantero
-Tags: leads, crm, clients, sales, 
+Tags: leads, crm, clients, sales, contact form 7, cf 7, contact forms, forms, push notifications, ios, android, pus notification, contact form 7 push notifications
 Requires at least: 3.3  
 Tested up to: 3.9.1.  
 Stable tag: 1
@@ -14,7 +14,7 @@ Helps you increase sales conversions by decreasing the response time under 1 min
 
 **Why should you use 59sec?**
 
-Because studies done by MIT and Kellogg (published on Forbes) show that answering a lead in 5 minutes versus 30 seconds means 21x more chances to close the sale. So, we are helping you answer under 1 minute, not in 5. :)
+Because studies done by MIT and Kellogg [http://www.forbes.com/sites/marketshare/2012/05/22/when-it-comes-to-inbound-marketing-time-is-definitely-of-the-essence/ (published here on Forbes)] show that answering a lead in 5 minutes versus 30 seconds means 21x more chances to close the sale. So, we are helping you answer under 1 minute, not in 5. :)
 
 When a new Contact Form 7 form is submitted, all sales agents get a push notification on their iOS and Android devices!
 Also, 59sec lite has a lead management procedure to help the sales team nurture the lead until it become a sale.
@@ -22,8 +22,11 @@ Also, 59sec lite has a lead management procedure to help the sales team nurture 
 **How it works (technically speaking)?**
 
 First you install the 59sec lite wordpress plugin on your site. Done!
+
 Second, you set up the plugin. Specify the "Entry Source" from the existing Contact Form 7 forms.
+
 Third, you put everybody from the sales team to install the mobile apps (iOS and Android available).
+
 Under notification tab, you will get a Secret Key (32 chars, alpha numeric). Insert this key on the mobile app, to connect the app to your site.
 
 That's it! You can start testing it.
@@ -31,8 +34,11 @@ That's it! You can start testing it.
 **Recommended lead management procedure:**
 
 Step 1. After the sales agents are notified of a new lead, one of them (the first available) will enter on the site (via phone/tablet or computer) to actually grab the lead. The counter will stop, so the sales manager will know how lazy or how professionals are they.
+
 Step 2. After grabbing the lead, the sales agent should immediately call the potential client.
+
 Step 3. After the call, the sales agent should set the right status of the lead + enter some details. The lead nurturing should continue, until the status become final.
+
 Step 4. Look at the statistics, so you know how good/bad is the situation.
 
 Using 59sec lite really boost conversion, if it's done properly. Just do it properly then :)
@@ -41,9 +47,13 @@ Using 59sec lite really boost conversion, if it's done properly. Just do it prop
 **How can you test 59sec lite before installing it on your own site?**
 
 Visit www.59sec.com/test/. 
+
 Install the 59sec mobile app on your device (from Google Play or AppStore).
+
 Connect the 59sec mobile app to the http://www.59sec.com/test/ with the Secret Key 123456789
+
 Test it, by writing something in the test contact form.
+
 Login into http://www.59sec.com/test/wp-login.php, with user test and password 123456789 to see what a sales agents sees. :)
 
 
