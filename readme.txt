@@ -6,7 +6,7 @@ Requires at least: 3.3
 Tested up to: 3.9.1.  
 Stable tag: 1
 
-Increase sales conversions by decreasing the response time under 59 seconds. 59sec delivers Contact Form 7 leads via push notifications on your mobile. A MUST-HAVE tool for more and happier clients!  
+Helps you answer leads under 59 sec, by delivering Contact Form 7 entries via push notifications on your mobile. A MUST-HAVE tool!
 
 == Description ==
 
