@@ -1,0 +1,207 @@
+a {cursor:pointer;}
+a.try-fix {font-weight:bold; text-decoration:underline;}
+.rs-table a.button { font-size: 18px; font-weight: bold; color: #fff; text-shadow: 1px 1px 0 #689324; text-transform: uppercase; text-align: center; box-shadow: 0 1px 0 0 #C1ED9C; border: 1px solid #83C41A; border-radius: 0; background: #8CB82B; display: block;}
+.rs-table a.button:hover { color: #444; background: #8CB82B;}
+
+#popup-note
+{
+	height:auto;
+	width:550px;
+	margin-left:-225px;
+	padding:10px 5px;
+	background:#ccc;
+	border:1px solid #fff;
+	position:fixed;
+	top:100px;
+	left:50%;
+	display:none;
+}
+.popup-note-close
+{
+	float:right;
+}
+#music
+{
+	display:none;
+}
+.fiftyninesec-day
+{
+	width:120px;
+	float:left;
+}
+/* Tables */
+.fiftyninesec_table th,
+.fiftyninesec_table.widefat th
+{
+	font-weight:bold;
+	text-transform:uppercase;
+}
+.fiftyninesec_table th:first-child,
+.fiftyninesec_table.widefat th:first-child
+{
+	padding:8px 10px;
+}
+.fiftyninesec_table td.nothing-here
+{
+	text-align:center;
+}
+.fiftyninesec_table th.status
+{
+	width:170px;
+}
+tr.notice-row
+{
+	background-color:#FEF7F1;
+	display:none;
+}
+
+/* 
+Max width before this PARTICULAR table gets nasty
+This query will take effect for any screen smaller than 760px
+and also iPads specifically.
+*//*
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+	.fiftyninesec_table, .fiftyninesec_table thead, .fiftyninesec_table tbody, .fiftyninesec_table th, .fiftyninesec_table td, .fiftyninesec_table tr { 
+		display: block; 
+	}
+	
+	.fiftyninesec_table thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	.fiftyninesec_table tr { border: 1px solid #ccc; }
+	
+	.fiftyninesec_table td { 
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+	}
+	
+	.fiftyninesec_table td:before { 
+		position: absolute;
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+	}
+	
+	.fiftyninesec_table td:nth-of-type(1):before { content: "Time taken"; }
+	.fiftyninesec_table td:nth-of-type(2):before { content: "Name"; }
+	.fiftyninesec_table td:nth-of-type(3):before { content: "Email"; }
+	.fiftyninesec_table td:nth-of-type(4):before { content: "Phone"; }
+	.fiftyninesec_table td:nth-of-type(5):before { content: "Message"; }
+	.fiftyninesec_table td:nth-of-type(6):before { content: "IP"; }
+	.fiftyninesec_table td:nth-of-type(7):before { content: "Grabed at"; }
+	.fiftyninesec_table td:nth-of-type(8):before { content: "Agent"; }
+	.fiftyninesec_table td:nth-of-type(9):before { content: "Status"; }
+	.fiftyninesec_table td:nth-of-type(10):before { content: "Notes"; }
+}
+
+*/
+
+@media only screen and (max-width: 780px) {
+#popup-note
+{
+	height:auto;
+	width:auto;
+	padding:2px;
+	margin:4px;
+	position:fixed;
+	font-size:9px;
+	top:32px;
+	left:0px;
+}
+#popup-note .quicktags-toolbar *
+{
+	font-size:9px !important;
+}
+#popup-note .quicktags-toolbar input
+{
+	max-height:18px;
+}
+#popup-note .mce-btn *
+{
+	font-size:9px !important;
+}
+#popup-note #insert-media-button
+{
+	padding:0px !important;
+	font-size:9px !important;
+}
+#popup-note br
+{
+	display:none;
+}
+#popup-note .button-primary
+{
+	font-size:9px !important;
+	max-height:20px;
+}
+#popup-note textarea
+{
+	max-height:110px;
+}
+
+/* Force table to not be like tables anymore */
+.rs-table,
+.rs-table thead,
+.rs-table tbody,
+.rs-table th,
+.rs-table td,
+.rs-table tr {
+display: block;
+}
+ 
+/* Hide table headers (but not display: none;, for accessibility) */
+.rs-table thead tr {
+position: absolute;
+top: -9999px;
+left: -9999px;
+}
+ 
+.rs-table tr { border: 1px solid #ccc; }
+.rs-table td {
+/* Behave like a "row" */
+border: none;
+border-bottom: 1px solid #eee;
+position: relative;
+padding-left: 50%;
+white-space: normal;
+text-align:left;
+}
+
+ .rs-table td:before {
+/* Now like a table header */
+position: absolute;
+/* Top/left values mimic padding */
+top: 6px;
+left: 6px;
+width: 45%;
+padding-right: 10px;
+white-space: nowrap;
+text-align:left;
+font-weight: bold;
+}
+ .rs-table td:before { content: attr(data-title); }
+}
+
+.current_lead td{
+	color:#FF0000;
+}
+.sortable {
+	cursor:pointer;
+}
+
+.asc {
+	background:url(../images/aup.png) 60% 60% no-repeat;	
+}
+.desc {
+	background:url(../images/adown.png) 60% 60% no-repeat;	
+}
