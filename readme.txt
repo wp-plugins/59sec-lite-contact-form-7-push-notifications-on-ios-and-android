@@ -10,12 +10,12 @@ Helps you increase sales conversions by decreasing the response time under 1 min
 
 == Description ==
 
-59sec lite helps companies to answer leads (or new contacts) under 1 minute (59 seconds). 
+59sec lite helps companies to answer leads (or new contacts) under 59 seconds. 
 
-Why? 
+<b>Why? </b>
 Because studies done by MIT and Kellogg (published on Forbes) show that answering a lead in 5 minutes versus 30 seconds means 21x more chances to close the sale. So, we are helping you answer under 1 minute, not in 5. :)
 
-How? 
+<b>How? </b>
 Via instant notifications: when a new Contact Form 7 form is submitted, all sales agents get a push notification on their iOS and Android devices
 Also, 59sec lite has a lead management procedure to help the sales team nurture the lead until it become a sale.
 
