@@ -1,7 +1,7 @@
 === 59sec lite - Contact Form 7 Push Notifications on iOS and Android===
 
 Contributors: kuantero
-Tags: leads, crm, clients, sales, contact form 7, cf 7, contact forms, forms, push notifications, ios, android, pus notification, contact form 7 push notifications
+Tags: leads, crm, clients, sales, contact form 7, cf 7, contact forms, forms, push notifications, ios, android, pus notification, contact form 7 push notifications, contact, counter, integration, iphone, mobile, notification, plugin
 Requires at least: 3.3  
 Tested up to: 3.9.1.  
 Stable tag: 1
@@ -16,7 +16,8 @@ Helps you answer leads under 59 sec, by delivering Contact Form 7 entries via pu
 
 **Why should you use 59sec?**
 
-Because studies done by MIT and Kellogg [http://www.forbes.com/sites/marketshare/2012/05/22/when-it-comes-to-inbound-marketing-time-is-definitely-of-the-essence/ (published here on Forbes)] show that answering a lead in 5 minutes versus 30 seconds means 21x more chances to close the sale. So, we are helping you answer under 1 minute, not in 5. :)
+Because studies done by MIT and Kellogg show that answering a lead in 5 minutes versus 30 seconds means 21x more chances to close the sale. So, we are helping you answer under 1 minute, not in 5. :)
+Source-> Forbes: http://www.forbes.com/sites/marketshare/2012/05/22/when-it-comes-to-inbound-marketing-time-is-definitely-of-the-essence/
 
 When a new Contact Form 7 form is submitted, all sales agents get a push notification on their iOS and Android devices!
 Also, 59sec lite has a lead management procedure to help the sales team nurture the lead until it become a sale.
