@@ -1,9 +1,9 @@
-=== 59sec ===
+=== 59sec lite ===
 
-Contributors: Kuantero.com
-Tags: leads, crm, clients
+Contributors: kuantero
+Tags: leads, crm, clients, sales, 
 Requires at least: 3.3  
-Tested up to: 3.9  
+Tested up to: 3.9.1.  
 Stable tag: 1
 
 Helps you increase sales conversions by decreasing the response time under 1 minute. Faster you answer your leads, more clients you have.
