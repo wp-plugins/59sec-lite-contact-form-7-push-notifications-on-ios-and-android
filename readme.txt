@@ -103,8 +103,8 @@ More options available on 59sec PRO!
 
 7. CRM - after the call finishes, the sales agent should write in the CRM the status + some text, to be available for everybody interested.
 
-8.
+8. 59sec iOS/Android app, just after install. You should put there your own secret key. Or, if you want to test with our credentials, put 123456789 and then go to http://www.59sec.com/test/ and write something in those forms. You'll receive the notification!
 
-9.
+9. 59sec iOS/Android app, after it's connected to a site. In this case, is connected to http://www.59sec.com/test/
 
-10. 
+10. You just received a lead. Yuupyyyyyy! Grab it fast and call it back, to impress the potential client :)!
