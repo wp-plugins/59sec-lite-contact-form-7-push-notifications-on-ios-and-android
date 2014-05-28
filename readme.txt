@@ -23,6 +23,10 @@ When a new Contact Form 7 form is submitted, all sales agents get a push notific
 Also, 59sec lite has a lead management procedure to help the sales team nurture the lead until it become a sale.
 
 
+**Short video presentation about 59sec**
+
+[youtube http://www.youtube.com/watch?v=WTS41xCZE1E]
+
 
 **How it works (technically speaking)?**
 
@@ -36,6 +40,8 @@ Under notification tab, you will get a Secret Key (32 chars, alpha numeric). Ins
 
 That's it! You can start testing it.
 
+
+[youtube http://www.youtube.com/watch?v=bFjwh1mNeAQ]
 
 
 **Recommended lead management procedure:**
@@ -81,6 +87,10 @@ Login into http://www.59sec.com/test/wp-login.php, with user test and password 1
 Under notification tab, you will get a Secret Key (32 chars, alpha numeric). Insert this key on the mobile app, to connect the app to your site.
 
 That's it! You can start testing it on your own server :).
+
+**This is a video how to test 59sec (both lite and PRO)**
+
+[youtube http://www.youtube.com/watch?v=bFjwh1mNeAQ]
 
 If you need help, tips & tricks, support, contact us via http://www.59sec.com :) Thanks in advance! 
 
