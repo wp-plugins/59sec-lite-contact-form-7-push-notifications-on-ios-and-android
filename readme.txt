@@ -102,3 +102,9 @@ More options available on 59sec PRO!
 6. CRM - after grabbing, the lead is moved to CRM, allocated to the respective sales agent. Now, the sales agent should immediately call the potential client.
 
 7. CRM - after the call finishes, the sales agent should write in the CRM the status + some text, to be available for everybody interested.
+
+8.
+
+9.
+
+10. 
