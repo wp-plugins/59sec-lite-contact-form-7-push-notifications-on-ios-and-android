@@ -84,3 +84,21 @@ That's it! You can start testing it on your own server :).
 
 If you need help, tips & tricks, support, contact us via http://www.59sec.com :) Thanks in advance! 
 
+
+== Screenshots ==
+
+1. Specify ENTRY SOURCES - in 59sec lite you can only select one contact form created with the awesome Contact Form 7 Plugin. On the 59sec PRO you can choose unlimited forms, also forms generated with Gravity + sales emails (verified with POP3/IMAP).
+
+2. NOTIFICATIONS - in 59sec lite you get notifications ONLY via push notifications on iOS and Android devices. Just download the 59sec mobile app from Appstore or Google Play and insert your own Secret Key to connect the phones to your site. 
+
+More options available on 59sec PRO!
+
+3. OTHER OPTIONS - in order to save time when answering the lead, the users are directed to the LEADS tab when logging into wordpress. Default is checked!
+
+4. USERS - on 59sec lite you can only have admin type users. But, if you have sales agents that are not 100% trustworthy, you should use 59sec PRO. There you can create simple "subscriber" users for the sales agents and this way they will have limited access, also on the 59sec plugin but also on the site. 
+
+5. LEADS - this is where you will see all the leads that needs to be answer. First agent available should GRAB the lead. This way, the lead will disappear from the other agents, to avoid duplication.
+
+6. CRM - after grabbing, the lead is moved to CRM, allocated to the respective sales agent. Now, the sales agent should immediately call the potential client.
+
+7. CRM - after the call finishes, the sales agent should write in the CRM the status + some text, to be available for everybody interested.
