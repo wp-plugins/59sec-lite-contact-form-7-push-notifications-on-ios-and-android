@@ -38,7 +38,7 @@ function editNote(id) {
 	
 	jQuery.post(ajaxurl, data, function(response) {
 		if (typeof tinyMCE == 'undefined') {
-			jQuery('#note').html(response);
+			jQuery('#note').val(response);
 		} else {
 			var editor = tinyMCE.get('note');
 			
@@ -49,7 +49,7 @@ function editNote(id) {
 				
 				editor.setContent(response);
 			} else {
-				jQuery('#note').html(response);
+				jQuery('#note').val(response);
 			}
 		}
 		
@@ -148,7 +148,8 @@ function liveUpdate() {
 
 	var data = {
         'action': 'liveupdate',
-		'lastcheck': window.lastCheck
+		'lastcheck': window.lastCheck,
+		'boss': window.is_boss_59sec
     };
 	
 	jQuery.post(ajaxurl, data, function(response) {
@@ -226,3 +227,10 @@ function sortBy(field){
 	
 	document.location = document.location;
 }
+
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-19836510-23', '59sec.com');
+ga('send', 'pageview');

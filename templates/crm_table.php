@@ -1,3 +1,6 @@
+<?php
+$cc = count($headers);
+?>
 <div class="crm-paging">
 	<input id="crm-page-<?php echo $item->id?>" type="hidden" name="current_page" value="<?php echo $paging -> current?>"/>
 	<?php if ($paging->prev !== FALSE):?>
@@ -17,7 +20,7 @@
 	<input id="filter-keyword-<?php echo $item->id?>" type="text" name="filter-keyword" value="<?php echo $keyword?>"/>
 	<input type="button" name="filter-op" value="Search" onclick="changeFilter(<?php echo $item->id?>)" class="button button-primary"/>
 </div>
-<table class="fiftyninesec_table wp-list-table widefat fixed crm-table rs-table">
+<table class="fiftyninesec_table wp-list-table widefat fixed crm-table rs-table <?php if ($cc > 5) echo 'mobile'?>">
 	<thead>
 	<tr>
 		<th onclick="sortBy('time')" class="sortable <?php if($sortBy=='time') echo $sortDir;?>"><u>Time taken</u></th>
@@ -38,7 +41,7 @@
 		<tr class="lead-<?php echo $lead['id']?> <?php if ($key % 2 != 0) echo 'alternate'?><?php echo $current_lead==$lead['id']?' current_lead':''?>">
 			<td data-title="Time Taken"><?php echo $leadsModel->timeFormat($lead['created_time'], $lead['reserved_time'])?></td>
 			<?php if (!empty($data)):?>
-			<?php foreach($data as $index => $cell): $cell = trim($cell); ?>
+			<?php foreach($data as $index => $cell): if (is_array($cell)) $cell = implode(', ', $cell); $cell = trim($cell); ?>
 			<td data-title="<?php echo $index?>"><?php if (!empty($cell)) echo stripslashes($cell); else echo '-';?></td>
 			<?php endforeach?>
 			<?php else:?>

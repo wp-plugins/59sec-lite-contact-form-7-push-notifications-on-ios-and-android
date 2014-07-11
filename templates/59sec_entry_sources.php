@@ -11,7 +11,7 @@
 </p>
 <h2>Entry Sources</h2>
 <p>Select the leads source. You can add one  contact form (generated with Contact Form 7 plugin). All the leads generated  will be visible under the "LEADS" tab. Don't forget to install 59sec iOS or Android app on your phone to receive the notifications!</p>
-<form method="post" action="options.php">
+<form id="sourceForm" name="sourceForm" method="post" action="">
 	<?php settings_fields('59sec-entry-sources');?>
 	<table class="form-table">
 		<tr>

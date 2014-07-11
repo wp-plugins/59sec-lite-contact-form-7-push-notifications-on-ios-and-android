@@ -1,4 +1,4 @@
-<p>UNANSWERED LEADS: <?php echo $leadsModel->getTotalUnansweredLeads()?></p>
+<p>UNANSWERED LEADS: <?php echo $leadsModel->getTotalUnansweredLeads()?> <?php echo get_real_site_url()?></p>
 <p>
 	<?php echo $leadsLink?>
 	<?php echo $crmLink?>

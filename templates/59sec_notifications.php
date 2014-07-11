@@ -63,8 +63,7 @@
 		<tr>
 			<th scope="row">&nbsp;</th>
 			<td>
-				<label>32 characters Secret Key :</label>
-				<?php echo $pluginkey?> <p class="description">Explanation: Input your key in the 59sec iPhone app to order to synchronize the apps and get push notifications on the phone in real time!</p>
+				Go to "<a href="?page=59sec_users">Users</a>" tab to grab your own secret key. Also from there you can take the Secret Keys for each sales person.
 			</td>
 		</tr>
 		<tr>
@@ -74,8 +73,7 @@
 		<tr>
 			<th scope="row">&nbsp;</th>
 			<td>
-				<label>32 characters Secret Key :</label>
-				<?php echo $pluginkey?> <p class="description">Explanation: Input your key in the 59sec Android app to order to synchronize the apps and get push notifications on the phone in real time!</p>
+				Go to "<a href="?page=59sec_users">Users</a>" tab to grab your own secret key. Also from there you can take the Secret Keys for each sales person.</p>
 			</td>
 		</tr>
 		<tr>

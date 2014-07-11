@@ -1,4 +1,4 @@
-<p>UNANSWERED LEADS: <span class="leadsTotalRemaining"><?php echo $leadsModel->getTotalUnansweredLeads()?></span></p>
+<p>UNANSWERED LEADS: <span class="leadsTotalRemaining"><?php echo $leadsModel->getTotalUnansweredLeads()?></span> <?php echo get_real_site_url()?></p>
 <p>
 	<?php echo $leadsLink?>
 	<?php echo $crmLink?>
@@ -22,6 +22,7 @@ Important!!! After grabbing the lead, call it immediately!
 <script type="text/javascript">
 jQuery(document).ready(function() {
 	window.checkInterval = <?php echo $leadscheck?>;
+	window.is_boss_59sec = <?php echo $isBoss?>;
 	initTimers();
 });
   </script>

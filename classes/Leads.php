@@ -18,9 +18,9 @@ class Leads
 	/**
 	 * Load the resources
 	 */
-	public function __construct($dbResource, $prefix)
+	public function __construct($wpdb, $prefix)
 	{
-		$this -> _db = &$dbResource;
+		$this -> _db = &$wpdb;
 		$this -> _prefix = $prefix;
 	}
 	
@@ -53,6 +53,7 @@ class Leads
 		$sqls[] = "CREATE TABLE IF NOT EXISTS `{$this->_prefix}59_tokens` (
 		`id` INT NOT NULL AUTO_INCREMENT,
 		`device_token` VARCHAR(255) NOT NULL,
+		`uid` INT NOT NULL,
 		`type` VARCHAR(100) NOT NULL,
 		PRIMARY KEY (`id`)
 		) ENGINE=MYISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1
@@ -76,7 +77,14 @@ class Leads
 	 */
 	public function updateVersion($version)
 	{
+		$version = str_replace('.', '', $version);
 		
+		if ($version < 101)
+		{
+			// new db column
+			$sql = "ALTER TABLE `{$this -> _prefix}59_tokens` ADD `uid` INT NOT NULL AFTER `device_token`";
+			$this -> _db -> query($sql);
+		}
 	}
    
 	/**
@@ -97,7 +105,7 @@ class Leads
 		VALUES ('{$data['type']}','{$data['entity_id']}','{$data['subject']}','{$data['status']}','{$data['created_time']}','{$data['postdata']}')
 		";
 		
-		mysql_query($sql, $this -> _db);
+		$this -> _db -> query($sql);
 	}
 	
 	/**
@@ -124,9 +132,9 @@ class Leads
 					WHERE `id` = '$id'
 					";
 					
-			mysql_query($sql, $this -> _db);
+			$this -> _db -> query($sql);
 			
-			return mysql_error($this -> _db);
+			return $this -> _db -> print_error();
 		}
 		else
 		{
@@ -167,12 +175,11 @@ class Leads
 				WHERE `created_time` > '{$since}'
 				";
 				
-		$q = mysql_query($sql, $this -> _db);
+		$results = $this -> _db -> get_row($sql, ARRAY_A);
 		
-		if (!empty($q))
+		if (!empty($results))
 		{
-			$r = mysql_fetch_assoc($q);
-			$total = $r['tot'];
+			$total = $results['tot'];
 		}
 		
 		if ($total > 20)
@@ -190,7 +197,6 @@ class Leads
 	public function getNewLeads($entity_id = 0)
 	{
 		$entity_id = intval($entity_id);
-		$results = array();
 		
 		$sql = "SELECT *
 				FROM `{$this -> _prefix}59_leads`
@@ -200,15 +206,8 @@ class Leads
 				ORDER BY `created_time` ASC
 				";
 				
-		$q = mysql_query($sql, $this -> _db);
+		$results = $this -> _db -> get_results($sql, ARRAY_A);
 		
-		if (!empty($q))
-		{
-			while ($r = mysql_fetch_assoc($q))
-			{
-				$results[] = $r;
-			}
-		}
 		return $results;
 	}
 	
@@ -220,10 +219,17 @@ class Leads
 		$sql = "SELECT 1
 				FROM `{$this -> _prefix}59_leads`
 				WHERE `user_id` IS NULL
-					AND `created_time` > $time
+					AND `created_time` > '$time'
 				";
-		$q = mysql_query($sql, $this -> _db);
-		return mysql_num_rows($q);
+		
+		$results = $this -> _db -> get_results($sql, ARRAY_A);
+		
+		if (empty($results))
+		{
+			return 1;
+		}
+		
+		return $this -> _db -> num_rows;
 	}
 	
 	/**
@@ -275,15 +281,7 @@ class Leads
 				LIMIT {$start}, {$this->_itemsPerPage}
 				";
 				
-		$q = mysql_query($sql, $this -> _db);
-		
-		if (!empty($q))
-		{
-			while ($r = mysql_fetch_assoc($q))
-			{
-				$results[] = $this -> stripslashes_deep($r);
-			}
-		}
+		$results = $this -> _db -> get_results($sql, ARRAY_A);
 		
 		return $results;
 	}
@@ -324,9 +322,9 @@ class Leads
 				ORDER BY `created_time` ASC
 				";
 				
-		$q = mysql_query($sql, $this -> _db);
+		$results = $this -> _db -> get_row($sql, ARRAY_A);
 		
-		$r = (!empty($q)) ? mysql_fetch_assoc($q) : array();
+		$r = (!empty($results)) ? $results : array();
 		$totalItems = $r['total'];
 		$nrPages = ceil($totalItems / $this->_itemsPerPage);
 		
@@ -371,9 +369,9 @@ class Leads
 				WHERE `id` = '{$id}'
 				";
 				
-		$q = mysql_query($sql, $this -> _db);
-		$r = mysql_fetch_assoc($q);
-		$r = $this -> stripslashes_deep($r);
+		$results = $this -> _db -> get_row($sql, ARRAY_A);
+		
+		$r = $this -> stripslashes_deep($results);
 		
 		return $r;
 	}
@@ -393,11 +391,11 @@ class Leads
 				WHERE `user_id` = '{$user_id}'
 				";
 				
-		$q = mysql_query($sql, $this -> _db);
+		$results = $this -> _db -> get_results($sql, ARRAY_A);
 		
-		if (!empty($q))
+		if (!empty($results))
 		{
-			while ($r = mysql_fetch_assoc($q))
+			foreach ($results as $r)
 			{
 				$created += $r['created_time'];
 				$reserved += $r['reserved_time'];
@@ -430,13 +428,11 @@ class Leads
 				ORDER BY `created_time` ASC
 				";
 				
-		$q = mysql_query($sql, $this -> _db);
+		$results = $this -> _db -> get_row($sql, ARRAY_A);
 		
-		if (!empty($q))
+		if (!empty($results))
 		{
-			$r = mysql_fetch_assoc($q);
-			
-			return $r['total'];
+			return $results['total'];
 		}
 		
 		return 0;
@@ -449,13 +445,11 @@ class Leads
 				WHERE `user_id` IS NULL
 				";
 				
-		$q = mysql_query($sql, $this -> _db);
+		$results = $this -> _db -> get_row($sql, ARRAY_A);
 		
-		if (!empty($q))
+		if (!empty($results))
 		{
-			$r = mysql_fetch_assoc($q);
-			
-			return $r['total'];
+			return $results['total'];
 		}
 		
 		return 0;
@@ -473,13 +467,11 @@ class Leads
 				WHERE `created_time` BETWEEN '{$date1}' AND '{$date2}'
 				";
 				
-		$q = mysql_query($sql, $this -> _db);
+		$results = $this -> _db -> get_row($sql, ARRAY_A);
 		
-		if (!empty($q))
+		if (!empty($results))
 		{
-			$r = mysql_fetch_assoc($q);
-			
-			return $r['total'];
+			return $results['total'];
 		}
 		
 		return 0;
@@ -499,13 +491,11 @@ class Leads
 					AND `created_time` BETWEEN '{$date1}' AND '{$date2}'
 				";
 				
-		$q = mysql_query($sql, $this -> _db);
+		$results = $this -> _db -> get_row($sql, ARRAY_A);
 		
-		if (!empty($q))
+		if (!empty($results))
 		{
-			$r = mysql_fetch_assoc($q);
-			
-			return $r['total'];
+			return $results['total'];
 		}
 		
 		return 0;
@@ -516,6 +506,10 @@ class Leads
 		$device_token = $data['device_token'];
 		$device_token = addslashes($device_token);
 		$type = addslashes($data['type']);
+		$key = $data['key'];
+		$user_id = substr($key, 32, strlen($key));
+		$user_id = base64_decode($user_id);
+		$user_id = intval($user_id) - strlen(get_real_site_url());
 		
 		$sql = "DELETE
 				FROM `{$this -> _prefix}59_tokens`
@@ -523,14 +517,14 @@ class Leads
 					AND `type` = '{$type}'
 				";
 				
-		mysql_query($sql, $this -> _db);
+		$this -> _db -> query($sql);
 		
 		$sql = "INSERT
-				INTO `{$this -> _prefix}59_tokens` (`device_token`, `type`)
-				VALUES ('{$device_token}', '{$type}')
+				INTO `{$this -> _prefix}59_tokens` (`device_token`, `uid`, `type`)
+				VALUES ('{$device_token}', '{$user_id}', '{$type}')
 				";
 				
-		mysql_query($sql, $this -> _db);
+		$this -> _db -> query($sql);
 	}
 	
 	public function deleteAppToken($data)
@@ -545,7 +539,7 @@ class Leads
 					AND `type` = '{$type}'
 				";
 				
-		mysql_query($sql, $this -> _db);
+		$this -> _db -> query($sql);
 	}
 	
 	function getAppTokens()
@@ -556,15 +550,7 @@ class Leads
 				FROM `{$this -> _prefix}59_tokens`
 				";
 				
-		$q = mysql_query($sql, $this -> _db);
-		
-		if (!empty($q))
-		{
-			while ($r = mysql_fetch_assoc($q))
-			{
-				$results[] = $r;
-			}
-		}
+		$results = $this -> _db -> get_results($sql, ARRAY_A);
 		
 		return $results;
 	}

@@ -1,6 +1,6 @@
 <?php
 global $current_user;
-$destination = ($current_user->caps['administrator'] == 1) ? '?page=59sec_crm_boss' : '?page=59sec_crm';
+$destination = ($current_user->caps['administrator'] == 1 || !empty($isBoss)) ? '?page=59sec_crm_boss' : '?page=59sec_crm';
 $emptyflag = true;
 
 /* Contact Form 7 */
@@ -16,7 +16,7 @@ foreach ($items as $item):
 		$cc = count($headers);
 ?>
 <h3><?php echo $item->title?></h3>
-<table class="fiftyninesec_table  wp-list-table widefat fixed rs-table">
+<table class="fiftyninesec_table  wp-list-table widefat fixed rs-table <?php if ($cc > 5) echo 'mobile'?>">
 	<thead>
 	<tr>
 		<th>Time Passed</th>
@@ -34,7 +34,7 @@ foreach ($items as $item):
 				<?php echo $leadsModel->timeFormat($lead['created_time'])?>
 			</span></td>
 			<?php if (!empty($data)):?>
-				<?php foreach($data as $index => $cell): $cell = trim($cell); ?>
+				<?php foreach($data as $index => $cell): if (is_array($cell)) $cell = implode(', ', $cell); $cell = trim($cell); ?>
 				<td data-title="<?php echo $index?>"><?php if (!empty($cell)) echo $cell; else echo '-';?></td>
 				<?php endforeach?>
 			<?php else:?>
@@ -62,7 +62,9 @@ foreach ($items as $item):
 <?php endif?>
 
 <script type="text/javascript">
-	window.lastCheck = <?php echo $lastCheck?>;
-	if(typeof(updateLeadsCount) == 'function')
-		updateLeadsCount(<?php echo $leadsModel->getTotalUnansweredLeads()?>);
+window.lastCheck = <?php echo $lastCheck?>;
+
+if(typeof(updateLeadsCount) == 'function') {
+	updateLeadsCount(<?php echo $leadsModel->getTotalUnansweredLeads()?>);
+}
 </script>
