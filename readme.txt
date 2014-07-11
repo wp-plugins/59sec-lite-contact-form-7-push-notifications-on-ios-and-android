@@ -122,17 +122,17 @@ More options available on 59sec PRO!
 
 == Changelog ==
 
-59sec version 2.0.
+**59sec version 2.0. - What's new?**
 
-- INDIVIDUAL SECRET KEYS – each respondent in a company will have his/her own Secret Key. Until now, everybody had the same Secret Key, which posed some extra problems
+- INDIVIDUAL SECRET KEYS - each respondent in a company will have his/her own Secret Key. Until now, everybody had the same Secret Key, which posed some extra problems.
     
-- UNLIMITED DOMAINS IN MOBILE APP – the serial entrepreneurs will rejoice, because on their mobile phones they can receive notifications from unlimited domains. Until now you could receive notifications but from 1 domain.
+- UNLIMITED DOMAINS IN MOBILE APP - the serial entrepreneurs will rejoice, because on their mobile phones they can receive notifications from unlimited domains. Until now you could receive notifications but from 1 domain.
     
-- SINGLE SIGN ON – Once you will enter your own Secret Key in the 59sec app, you will be able to be logged in automatically in each domain, not being required to introduce again back-end user and password
+- SINGLE SIGN ON - Once you will enter your own Secret Key in the 59sec app, you will be able to be logged in automatically in each domain, not being required to introduce again back-end user and password
     
-- TEAMS FEATURES – you can set up unlimited teams, that only members in those teams will receive notifications. For example, you can have teams like: New-York, LA, Boston, Dallas or Sales/Marketing/Technical… Until now, everybody received same notifications.
-    Various optimizations.
+- TEAMS FEATURES - you can set up unlimited teams, that only members in those teams will receive notifications. For example, you can have teams like: New-York, LA, Boston, Dallas or Sales/Marketing/Technical… Until now, everybody received same notifications.
+Various optimizations.
 
-We’ll let you know when you can upgrade everything!
+
 
 IMPORTANT! When you upgrade the mobile apps you will have to upgrade also the plugin (and viceversa), because new individuals secret keys are available and need to be introduced on mobile apps :) 
