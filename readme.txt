@@ -4,7 +4,7 @@ Contributors: kuantero
 Tags: leads, crm, clients, sales, contact form 7, cf 7, contact forms, forms, push notifications, ios, android, pus notification, contact form 7 push notifications, contact, counter, integration, iphone, mobile, notification, plugin
 Requires at least: 3.3  
 Tested up to: 3.9.1.  
-Stable tag: 2
+Stable tag: 3
 
 Helps you answer leads under 59 sec, by delivering Contact Form 7 entries via push notifications on your mobile. A MUST-HAVE tool!
 
@@ -122,7 +122,7 @@ More options available on 59sec PRO!
 
 == Changelog ==
 
-**59sec version 2.0. - What's new?**
+**What's new in 59sec lite version 3.0. - ?**
 
 - INDIVIDUAL SECRET KEYS - each respondent in a company will have his/her own Secret Key. Until now, everybody had the same Secret Key, which posed some extra problems.
     
@@ -130,9 +130,7 @@ More options available on 59sec PRO!
     
 - SINGLE SIGN ON - Once you will enter your own Secret Key in the 59sec app, you will be able to be logged in automatically in each domain, not being required to introduce again back-end user and password
     
-- TEAMS FEATURES - you can set up unlimited teams, that only members in those teams will receive notifications. For example, you can have teams like: New-York, LA, Boston, Dallas or Sales/Marketing/Technical… Until now, everybody received same notifications.
-Various optimizations.
-
+59sec PRO has also other cool business usefull features :)
 
 
 IMPORTANT! When you upgrade the mobile apps you will have to upgrade also the plugin (and viceversa), because new individuals secret keys are available and need to be introduced on mobile apps :) 

@@ -4,7 +4,7 @@
  * Plugin Name: 59sec lite
  * Plugin URI: http://www.59sec.com
  * Description: 59sec lite sends Contact Form 7 push notifications on your iOS or Android mobile device. Also 59sec lite helps you increase sales conversions by decreasing the response time under 59 seconds. Upgrade to 59sec PRO now at <a href="http://www.59sec.com" target="_blank">www.59sec.com</a>! Awsome premium features that will boost your sales. Free 30 days trial, no strings attached!
- * Version: 2
+ * Version: 3
  * Author: Kuantero.com
  * Author URI: http://www.kuantero.com
  * License: GNU
@@ -25,7 +25,7 @@ GNU General Public License for more details.
 */
 
 // init
-define('_59SEC_VERSION', '1.0.1');
+define('_59SEC_VERSION', '3');
 
 define('_59SEC_INCLUDE_PATH', dirname(realpath(__FILE__)));
 
