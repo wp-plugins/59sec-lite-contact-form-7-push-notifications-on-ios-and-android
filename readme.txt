@@ -132,5 +132,7 @@ More options available on 59sec PRO!
     
 59sec PRO has also other cool business usefull features :)
 
+- TEAMS FEATURES (only for 59sec PRO version) - you can set up unlimited teams, that only members in those teams will receive notifications. For example, you can have teams like: New-York, LA, Boston, Dallas or Sales/Marketing/Technical. Until now, everybody received same notifications. 
+
 
 IMPORTANT! When you upgrade the mobile apps you will have to upgrade also the plugin (and viceversa), because new individuals secret keys are available and need to be introduced on mobile apps :) 
