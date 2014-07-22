@@ -1,12 +1,12 @@
-=== 59sec lite - Contact Form 7 Push Notifications on iOS and Android===
+=== 59sec ===
 
-Contributors: kuantero
-Tags: leads, crm, clients, sales, contact form 7, cf 7, contact forms, forms, push notifications, ios, android, pus notification, contact form 7 push notifications, contact, counter, integration, iphone, mobile, notification, plugin
+Contributors: Kuantero.com
+Tags: leads, crm, clients
 Requires at least: 3.3  
-Tested up to: 3.9.1.  
-Stable tag: 3
+Tested up to: 3.9  
+Stable tag: 3.1
 
-Helps you answer leads under 59 sec, by delivering Contact Form 7 entries via push notifications on your mobile. A MUST-HAVE tool!
+Helps you increase sales conversions by decreasing the response time under 59 seconds. Faster you answer your leads, more clients you have.
 
 == Description ==
 
@@ -121,6 +121,13 @@ More options available on 59sec PRO!
 
 
 == Changelog ==
+
+**What's new in 59sec lite version 3.1. - ?**
+
+Latest version of Contact Form 7 changed some date variables. As a results, 59sec did not function perfectly anymore. The loading gif was keep spinning after submitting the form and the push notification on your phone was stripped of all relevant information.
+
+Now we solved this and 59sec lite works with old and new version of Contact Form 7 just fine. Thanks
+
 
 **What's new in 59sec lite version 3.0. - ?**
 

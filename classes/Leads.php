@@ -150,7 +150,8 @@ class Leads
 	{
 		if (!empty($results))
 		{
-			$postdata = @unserialize($results['0']['postdata']);
+			$data = end($results);
+			$postdata = @unserialize($data['postdata']);
 			
 			if (!empty($postdata))
 			{
@@ -507,9 +508,8 @@ class Leads
 		$device_token = addslashes($device_token);
 		$type = addslashes($data['type']);
 		$key = $data['key'];
-		$user_id = substr($key, 32, strlen($key));
-		$user_id = base64_decode($user_id);
-		$user_id = intval($user_id) - strlen(get_real_site_url());
+		$user_login = _59sec_desalt($key);
+		$user = get_user_by('login', $user_login);
 		
 		$sql = "DELETE
 				FROM `{$this -> _prefix}59_tokens`
@@ -521,7 +521,7 @@ class Leads
 		
 		$sql = "INSERT
 				INTO `{$this -> _prefix}59_tokens` (`device_token`, `uid`, `type`)
-				VALUES ('{$device_token}', '{$user_id}', '{$type}')
+				VALUES ('{$device_token}', '{$user->ID}', '{$type}')
 				";
 				
 		$this -> _db -> query($sql);

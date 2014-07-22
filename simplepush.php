@@ -11,10 +11,11 @@ foreach($devices as $device)
 	$i++;
 }
 
+
 $message = $leadsModel -> leadAsMail($lead);
 $message = substr($message, 0, 150);
 
-if(!empty( $deviceTokens ))
+if(!empty($deviceTokens))
 {
 	if (trim($message) != '')
 	{

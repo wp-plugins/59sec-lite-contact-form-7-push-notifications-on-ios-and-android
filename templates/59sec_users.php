@@ -81,7 +81,7 @@
 		<td class="email column-email">
 			<a href="mailto:<?php echo $user->user_email?>" title="E-mail: <?php echo $user->user_email?>"><?php echo $user->user_email?></a>
 		</td>
-		<td class="key column-key"><?php echo $pluginkey.base64_encode($user->ID+strlen(get_real_site_url()))?></td>
+		<td class="key column-key"><?php echo _59sec_salt($user->user_login)?></td>
 		<td class="role column-role"><?php echo $user->roles['0']?></td>
 	</tr>
 	<?php endforeach?>
