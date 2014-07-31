@@ -1,6 +1,6 @@
 === 59sec ===
 
-Contributors: Kuantero.com
+Contributors: kuantero
 Tags: leads, crm, clients
 Requires at least: 3.3  
 Tested up to: 3.9  
