@@ -440,20 +440,29 @@ class Leads
 	}
 	
 	public function getTotalUnansweredLeads()
-	{	
-		$sql = "SELECT COUNT(*) AS `total`
-				FROM `{$this -> _prefix}59_leads`
-				WHERE `user_id` IS NULL
-				";
-				
-		$results = $this -> _db -> get_row($sql, ARRAY_A);
+	{
+		$out = 0;
 		
-		if (!empty($results))
+		if (_59SEC_REQUIREMENTS)
 		{
-			return $results['total'];
+			$forms = (array) get_option('59sec_wpcf7');
+			$formIds = implode(',', $forms);
+			$sql = "SELECT COUNT(*) AS `total`
+					FROM `{$this -> _prefix}59_leads`
+					WHERE `user_id` IS NULL
+						AND `type` = 'form'
+						AND `entity_id` IN ({$formIds})
+					";
+					
+			$results = $this -> _db -> get_row($sql, ARRAY_A);
+			
+			if (!empty($results))
+			{
+				$out += $results['total'];
+			}
 		}
 		
-		return 0;
+		return $out;
 	}
 	
 	public function getTotalLeads($date)

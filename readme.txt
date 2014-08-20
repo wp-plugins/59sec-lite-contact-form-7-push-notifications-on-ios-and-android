@@ -4,7 +4,7 @@ Contributors: kuantero
 Tags: leads, crm, clients
 Requires at least: 3.3  
 Tested up to: 3.9  
-Stable tag: 3.1
+Stable tag: 3.2
 
 Helps you increase sales conversions by decreasing the response time under 59 seconds. Faster you answer your leads, more clients you have.
 
@@ -121,6 +121,11 @@ More options available on 59sec PRO!
 
 
 == Changelog ==
+
+**What's new in 59sec lite version 3.2. - ?**
+
+Some bugs fixed for https connections and for some particular cases, when the contact forms were changed during operation.
+
 
 **What's new in 59sec lite version 3.1. - ?**
 
