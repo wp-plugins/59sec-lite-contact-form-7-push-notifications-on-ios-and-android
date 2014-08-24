@@ -11,6 +11,8 @@ A Mandatory Tool For Sales Departments! 59sec helps companies answer leads under
 
 == Description ==
 
+HELLO Wordpress fans! 59sec is a Mandatory Tool for all Sales Departments!
+
 59sec helps companies to answer leads/questions under 59 seconds! This will BOOST your conversion rate, because the potential clients will be blown away by your responsiveness and professionalism :)
 
 
@@ -19,7 +21,8 @@ A Mandatory Tool For Sales Departments! 59sec helps companies answer leads under
 It's a awesome Wordpress plugin that connects to 59sec mobile apps (iOS, Android and soon, Windows) to help your company answer LEADS very fast, under 59 seconds. 
 
 There are 3 versions of 59sec:
-* 59sec Lite (this one, pretty limited, but very effective if you have just a few leads per month)
+
+* 59sec Lite (this one, with limited features, but very effective if you have just a few leads per month!)
 * 59sec PRO (costs just $59/month, full of extraordinary features, almost any limitations)
 * 59sec Enterprise (for big boys)
 
@@ -78,7 +81,7 @@ That's it! You can start testing it.
 **Get Your Training Here!**
 
 Remember, grasshopper:
-“A great weapon produces great results ONLY if the soldiers are using it properly.”
+<em>A great weapon produces great results ONLY if the soldiers are using it properly. :)</em>
 
 Sales Agents-> https://www.59sec.com/59sec-training-sales-agents/
 Sales Managers/Bosses/PPC Gurus/Owners -> https://www.59sec.com/59sec-training-for-sales-managers/
@@ -114,9 +117,9 @@ Login into http://www.59sec.com/test/wp-login.php, with user test and password 1
 
 **Happy Users**
 
-* “59sec gives us an edge on competition. [...] Highly recommended.”
-* “I’m exceptionally pleased with the results and just wanted to say thank you so much for a great tool!”
-* “59sec application brought us a real benefit in communication and in the development of our business. We find this application absolutely mandatory.”
+* <em>59sec gives us an edge on competition. [...] Highly recommended.</em>
+* <em>I am exceptionally pleased with the results and just wanted to say thank you so much for a great tool!</em>
+* <em>59sec application brought us a real benefit in communication and in the development of our business. We find this application absolutely mandatory.</em>
 
 
 
