@@ -1,26 +1,56 @@
-=== 59sec ===
+=== THE Leads Management System: 59sec lite ===
 
 Contributors: kuantero
-Tags: leads, crm, clients
+Tags: leads, crm, clients, sales, contact form 7, cf 7, contact forms, forms, push notifications, ios, android, pus notification, contact form 7 push notifications, contact, counter, integration, iphone, mobile, notification, plugin, 59sec, 59 sec, leads management system, leads management
 Requires at least: 3.3  
-Tested up to: 3.9  
+Tested up to: 3.9.2  
 Stable tag: 3.2
 
-Helps you increase sales conversions by decreasing the response time under 59 seconds. Faster you answer your leads, more clients you have.
+A Mandatory Tool For Sales Departments! 59sec helps companies answer leads under 59 seconds, boosting conversions! Check the facts!
+
 
 == Description ==
 
-59sec lite helps companies to answer leads (or new contacts) under 59 seconds! This will BOOST your conversion rate, because the potential clients will be blown away by your responsiveness and professionalism :)
+59sec helps companies to answer leads/questions under 59 seconds! This will BOOST your conversion rate, because the potential clients will be blown away by your responsiveness and professionalism :)
 
 
+**What is 59sec exactly?**
 
-**Why should you use 59sec?**
+It's a awesome Wordpress plugin that connects to 59sec mobile apps (iOS, Android and soon, Windows) to help your company answer LEADS very fast, under 59 seconds. 
+There are 3 versions of 59sec:
+- 59sec lite (this one, pretty limited, but very effective if you have just a few leads per month)
+- 59sec PRO (costs just $59/month, full of extraordinary features, almost any limitations)
+- 59sec Enterprise (for big boys)
 
-Because studies done by MIT and Kellogg show that answering a lead in 5 minutes versus 30 seconds means 21x more chances to close the sale. So, we are helping you answer under 1 minute, not in 5. :)
-Source-> Forbes: http://www.forbes.com/sites/marketshare/2012/05/22/when-it-comes-to-inbound-marketing-time-is-definitely-of-the-essence/
+
+**Why 59sec works so well?**
+
+1. Because studies done by MIT and Kellogg show that answering a lead in 5 minutes versus 30 seconds means 21x more chances to close the sale. So, we are helping you answer under 1 minute, not in 5. :)
+Source-> Forbes: http://www.forbes.com/sites/marketshare/2012/05/22/when-it-comes-to-inbound-marketing-time-is-definitely-of-the-essence/                                                                                                                                                                      
+                                                                                                                                                                             
+2. Because calling a potential client under 59 seconds clearly EXCEEDS his expectations.
+
+3. Because it generates WOW Factor and can convert the lead instantly.
+
+4. Because it deters the potential client to ask for more offers from competitors. ;)
 
 When a new Contact Form 7 form is submitted, all sales agents get a push notification on their iOS and Android devices!
-Also, 59sec lite has a lead management procedure to help the sales team nurture the lead until it become a sale.
+Also, 59sec has a lead management procedure to help the sales team nurture the lead until it become a sale.
+
+
+**Who should use 59sec**
+By Company Type:
+- Any company with 1-10,000 respondents, that receives online leads
+- Any company that wants a stronger differentiation point versus competition
+- PPC agencies (to help their clients convert more leads)
+
+
+By Department Type:
+- Sales (grab leads and call immediately) 
+- Support (answering fast to questions from users/clients)
+- Marketing (from research to activations)
+- PR (to quickly answer questions from bloggers or journalists) 
+- Logistics (to grab and deliver goods)
 
 
 **Short video presentation about 59sec**
@@ -34,7 +64,7 @@ First you install the 59sec lite wordpress plugin on your site. Done!
 
 Second, you set up the plugin. Specify the "Entry Source" from the existing Contact Form 7 forms.
 
-Third, you put everybody from the sales team to install the mobile apps (iOS and Android available).
+Third, you put everybody from the sales team to install the mobile apps from iOS's App Store or Android's Google Play. It's free.
 
 Under notification tab, you will get a Secret Key (32 chars, alpha numeric). Insert this key on the mobile app, to connect the app to your site.
 
@@ -42,6 +72,14 @@ That's it! You can start testing it.
 
 
 [youtube http://www.youtube.com/watch?v=bFjwh1mNeAQ]
+
+**Get Your Training Here!**
+
+Remember, grasshopper:
+“A great weapon produces great results ONLY if the soldiers are using it properly.”
+
+Sales Agents-> https://www.59sec.com/59sec-training-sales-agents/
+Sales Managers/Bosses/PPC Gurus/Owners ->
 
 
 **Recommended lead management procedure:**
@@ -72,7 +110,14 @@ Login into http://www.59sec.com/test/wp-login.php, with user test and password 1
 
 
 
-**If you want much more features, test for free 59sec PRO, available on http://www.59sec.com**
+**Happy Users**
+
+• “59sec gives us an edge on competition. [...] Highly recommended.”
+• “I’m exceptionally pleased with the results and just wanted to say thank you so much for a great tool!”
+• “59sec application brought us a real benefit in communication and in the development of our business. We find this application absolutely mandatory.”
+
+
+**If you want much more features, test for free 59sec PRO, available on https://www.59sec.com/start-free-trial/**
 
 
 == Installation ==
@@ -92,7 +137,7 @@ That's it! You can start testing it on your own server :).
 
 [youtube http://www.youtube.com/watch?v=bFjwh1mNeAQ]
 
-If you need help, tips & tricks, support, contact us via http://www.59sec.com :) Thanks in advance! 
+If you need help, tips & tricks, support, contact us via https://www.59sec.com :) Thanks in advance! 
 
 
 == Screenshots ==
