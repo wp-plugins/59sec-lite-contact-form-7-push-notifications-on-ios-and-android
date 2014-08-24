@@ -17,10 +17,11 @@ A Mandatory Tool For Sales Departments! 59sec helps companies answer leads under
 **What is 59sec exactly?**
 
 It's a awesome Wordpress plugin that connects to 59sec mobile apps (iOS, Android and soon, Windows) to help your company answer LEADS very fast, under 59 seconds. 
+
 There are 3 versions of 59sec:
-- 59sec lite (this one, pretty limited, but very effective if you have just a few leads per month)
-- 59sec PRO (costs just $59/month, full of extraordinary features, almost any limitations)
-- 59sec Enterprise (for big boys)
+* 59sec Lite (this one, pretty limited, but very effective if you have just a few leads per month)
+* 59sec PRO (costs just $59/month, full of extraordinary features, almost any limitations)
+* 59sec Enterprise (for big boys)
 
 
 **Why 59sec works so well?**
@@ -39,18 +40,21 @@ Also, 59sec has a lead management procedure to help the sales team nurture the l
 
 
 **Who should use 59sec**
+
 By Company Type:
-- Any company with 1-10,000 respondents, that receives online leads
-- Any company that wants a stronger differentiation point versus competition
-- PPC agencies (to help their clients convert more leads)
+
+* Any company with 1-10,000 respondents, that receives online leads
+* Any company that wants a stronger differentiation point versus competition
+* PPC agencies (to help their clients convert more leads)
 
 
 By Department Type:
-- Sales (grab leads and call immediately) 
-- Support (answering fast to questions from users/clients)
-- Marketing (from research to activations)
-- PR (to quickly answer questions from bloggers or journalists) 
-- Logistics (to grab and deliver goods)
+
+* Sales (grab leads and call immediately) 
+* Support (answering fast to questions from users/clients)
+* Marketing (from research to activations)
+* PR (to quickly answer questions from bloggers or journalists) 
+* Logistics (to grab and deliver goods)
 
 
 **Short video presentation about 59sec**
@@ -60,18 +64,16 @@ By Department Type:
 
 **How it works (technically speaking)?**
 
-First you install the 59sec lite wordpress plugin on your site. Done!
-
-Second, you set up the plugin. Specify the "Entry Source" from the existing Contact Form 7 forms.
-
-Third, you put everybody from the sales team to install the mobile apps from iOS's App Store or Android's Google Play. It's free.
-
-Under notification tab, you will get a Secret Key (32 chars, alpha numeric). Insert this key on the mobile app, to connect the app to your site.
+* First you install the 59sec lite wordpress plugin on your site. Done!
+* Second, you set up the plugin. Specify the "Entry Source" from the existing Contact Form 7 forms.
+* Third, you put everybody from the sales team to install the mobile apps from iOS's App Store or Android's Google Play. It's free.
+* Under notification tab, you will get a Secret Key (32 chars, alpha numeric). Insert this key on the mobile app, to connect the app to your site.
 
 That's it! You can start testing it.
 
 
 [youtube http://www.youtube.com/watch?v=bFjwh1mNeAQ]
+
 
 **Get Your Training Here!**
 
@@ -79,7 +81,7 @@ Remember, grasshopper:
 “A great weapon produces great results ONLY if the soldiers are using it properly.”
 
 Sales Agents-> https://www.59sec.com/59sec-training-sales-agents/
-Sales Managers/Bosses/PPC Gurus/Owners ->
+Sales Managers/Bosses/PPC Gurus/Owners -> https://www.59sec.com/59sec-training-for-sales-managers/
 
 
 **Recommended lead management procedure:**
@@ -112,9 +114,10 @@ Login into http://www.59sec.com/test/wp-login.php, with user test and password 1
 
 **Happy Users**
 
-• “59sec gives us an edge on competition. [...] Highly recommended.”
-• “I’m exceptionally pleased with the results and just wanted to say thank you so much for a great tool!”
-• “59sec application brought us a real benefit in communication and in the development of our business. We find this application absolutely mandatory.”
+* “59sec gives us an edge on competition. [...] Highly recommended.”
+* “I’m exceptionally pleased with the results and just wanted to say thank you so much for a great tool!”
+* “59sec application brought us a real benefit in communication and in the development of our business. We find this application absolutely mandatory.”
+
 
 
 **If you want much more features, test for free 59sec PRO, available on https://www.59sec.com/start-free-trial/**
