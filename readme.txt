@@ -6,43 +6,57 @@ Requires at least: 3.3
 Tested up to: 3.9.2  
 Stable tag: 3.2
 
-A Mandatory Tool For Sales Departments! 59sec helps companies answer leads under 59 seconds, boosting conversions! Check the facts!
+Mandatory Tool For Sales Departments! 59sec helps companies answer leads under 59 seconds, boosting sales conversions! Check the facts!
 
 
 == Description ==
 
-HELLO Wordpress fans! 59sec is a Mandatory Tool for all Sales Departments!
+**WOW FACT!**
 
-59sec helps companies to answer leads/questions under 59 seconds! This will BOOST your conversion rate, because the potential clients will be blown away by your responsiveness and professionalism :)
+Answering a lead in 5 minutes vs 30 minutes means 21x MORE chances to close the sale!
+ 
+[Source: MIT & Kellogg study, published in Forbes](http://www.forbes.com/sites/marketshare/2012/05/22/when-it-comes-to-inbound-marketing-time-is-definitely-of-the-essence/)
+
+**59sec helps companies to answer leads/questions under 59 seconds!** 
+This will BOOST your conversion rates, because the potential clients will be blown away by your responsiveness and professionalism :)
 
 
-**What is 59sec exactly?**
+**AWESOME FEATURES**
 
-It's a awesome Wordpress plugin that connects to 59sec mobile apps (iOS, Android and soon, Windows) to help your company answer LEADS very fast, under 59 seconds. 
+* Connects your site to your sales agents mobile devices ([iOS](https://itunes.apple.com/us/app/59sec/id851174210?mt=8), [Android](https://play.google.com/store/apps/details?id=com.kuantero.fiftyninesec) and soon, Windows).
+* Sends push notifications to your sales agents when a new lead is generated
+* Leads entry source: Contact Form 7 plugin 
+* Sales agents can respond to leads from phone, tablet, computer
+* Statistics - so you, the boss, will know how effective is your sales team
+* Time tracking - each lead has it's own seconds counter, to monitor the response time. Faster responses => More conversions
+* CRM - a simple CRM to help lead nurturing
+ * Time taken for each lead
+ * Lead date
+ * Agent who grabbed the lead
+ * Lead content
+ * Status selector
+ * Comments editor
 
-There are 3 versions of 59sec:
+[More features available at 59sec PRO.](https://www.59sec.com/prices/)
 
-* 59sec Lite (this one, with limited features, but very effective if you have just a few leads per month!)
+**59sec VERSIONS:**
+
+* 59sec LITE (this one, with limited features, but very effective if you have just a few leads per month!)
 * 59sec PRO (costs just $59/month, full of extraordinary features, almost any limitations)
 * 59sec Enterprise (for big boys)
 
 
-**Why 59sec works so well?**
+**WHY 59sec WORKS SO WELL?**
 
-1. Because studies done by MIT and Kellogg show that answering a lead in 5 minutes versus 30 seconds means 21x more chances to close the sale. So, we are helping you answer under 1 minute, not in 5. :)
-Source-> Forbes: http://www.forbes.com/sites/marketshare/2012/05/22/when-it-comes-to-inbound-marketing-time-is-definitely-of-the-essence/                                                                                                                                                                      
-                                                                                                                                                                             
-2. Because calling a potential client under 59 seconds clearly EXCEEDS his expectations.
-
-3. Because it generates WOW Factor and can convert the lead instantly.
-
-4. Because it deters the potential client to ask for more offers from competitors. ;)
+1. Because calling a potential client under 59 seconds clearly EXCEEDS his expectations.
+2. Because it generates WOW Factor and can convert the lead instantly.
+3. Because it deters the potential client to ask for more offers from competitors. ;)
 
 When a new Contact Form 7 form is submitted, all sales agents get a push notification on their iOS and Android devices!
 Also, 59sec has a lead management procedure to help the sales team nurture the lead until it become a sale.
 
 
-**Who should use 59sec**
+**WHO SHOULD USE 59sec**
 
 By Company Type:
 
@@ -60,17 +74,17 @@ By Department Type:
 * Logistics (to grab and deliver goods)
 
 
-**Short video presentation about 59sec**
+**SHORT VIDEO PRESENTATION 59sec**
 
 [youtube http://www.youtube.com/watch?v=WTS41xCZE1E]
 
 
-**How it works (technically speaking)?**
+**HOW IT WORKS (technically speaking)?**
 
 * First you install the 59sec lite wordpress plugin on your site. Done!
 * Second, you set up the plugin. Specify the "Entry Source" from the existing Contact Form 7 forms.
 * Third, you put everybody from the sales team to install the mobile apps from iOS's App Store or Android's Google Play. It's free.
-* Under notification tab, you will get a Secret Key (32 chars, alpha numeric). Insert this key on the mobile app, to connect the app to your site.
+* Under `Users` tab, you will get a Secret Key (32 chars, alpha numeric). Insert this key on the mobile app, to connect the app to your site.
 
 That's it! You can start testing it.
 
@@ -78,40 +92,13 @@ That's it! You can start testing it.
 [youtube http://www.youtube.com/watch?v=bFjwh1mNeAQ]
 
 
-**Get Your Training Here!**
+**TEST 59sec LITE**
 
-Remember, grasshopper:
-<em>A great weapon produces great results ONLY if the soldiers are using it properly. :)</em>
-
-Sales Agents-> https://www.59sec.com/59sec-training-sales-agents/
-Sales Managers/Bosses/PPC Gurus/Owners -> https://www.59sec.com/59sec-training-for-sales-managers/
-
-
-**Recommended lead management procedure:**
-
-Step 1. After the sales agents are notified of a new lead, one of them (the first available) will enter on the site (via phone/tablet or computer) to actually grab the lead. The counter will stop, so the sales manager will know how lazy or how professionals are they.
-
-Step 2. After grabbing the lead, the sales agent should immediately call the potential client.
-
-Step 3. After the call, the sales agent should set the right status of the lead + enter some details. The lead nurturing should continue, until the status become final.
-
-Step 4. Look at the statistics, so you know how good/bad is the situation.
-
-Using 59sec lite really boost conversion, if it's done properly. Just do it properly then :)
-
-
-
-**How can you test 59sec lite before installing it on your own site?**
-
-Visit www.59sec.com/test/. 
-
-Install the 59sec mobile app on your device (from Google Play or AppStore).
-
-Connect the 59sec mobile app to the http://www.59sec.com/test/ with the Secret Key 123456789
-
-Test it, by writing something in the test contact form.
-
-Login into http://www.59sec.com/test/wp-login.php, with user test and password 123456789 to see what a sales agents sees. :)
+* Visit www.59sec.com/test/. 
+* Install the 59sec mobile app on your device (from [Google Play](https://play.google.com/store/apps/details?id=com.kuantero.fiftyninesec) or [AppStore](https://itunes.apple.com/us/app/59sec/id851174210?mt=8).
+* Connect the 59sec mobile app to the http://www.59sec.com/test/ with the Secret Key 123456789
+* Test it, by writing something in the test contact form.
+* Login into http://www.59sec.com/test/wp-login.php, with user test and password 123456789 to see what a sales agent sees. :)
 
 
 
@@ -130,7 +117,7 @@ Login into http://www.59sec.com/test/wp-login.php, with user test and password 1
 
 1. Upload the `59sec-lite` folder to your `/wp-content/plugins/` directory.
 
-2. Activate the "59sec lite" plugin in your WordPress administration interface.
+2. Activate the `59sec lite` plugin in your WordPress administration interface.
 
 3. Set up the plugin. Specify the "Entry Source" from the existing Contact Form 7 forms.
 
@@ -142,6 +129,28 @@ That's it! You can start testing it on your own server :).
 **This is a video how to test 59sec (both lite and PRO)**
 
 [youtube http://www.youtube.com/watch?v=bFjwh1mNeAQ]
+
+**GET YOUR TRAINING HERE!**
+
+Remember, grasshopper:
+<em>A great weapon produces great results ONLY if the soldiers are using it properly. :)</em>
+
+Sales Agents-> https://www.59sec.com/59sec-training-sales-agents/
+Sales Managers/Bosses/PPC Gurus/Owners -> https://www.59sec.com/59sec-training-for-sales-managers/
+
+
+**RECOMMENDED LEAD MANAGEMENT PROCEDURE:**
+
+Step 1. After the sales agents are notified of a new lead, one of them (the first available) will enter on the site (via phone/tablet or computer) to actually grab the lead. The counter will stop, so the sales manager will know how lazy or how professionals are they.
+
+Step 2. After grabbing the lead, the sales agent should immediately call the potential client.
+
+Step 3. After the call, the sales agent should set the right status of the lead + enter some details. The lead nurturing should continue, until the status become final.
+
+Step 4. Look at the statistics, so you know how good/bad is the situation.
+
+Using 59sec lite really boost conversion, if it's done properly. Just do it properly then :)
+
 
 If you need help, tips & tricks, support, contact us via https://www.59sec.com :) Thanks in advance! 
 
