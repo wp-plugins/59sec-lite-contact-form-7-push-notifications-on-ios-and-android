@@ -1,14 +1,18 @@
 <p>UNANSWERED LEADS: <span class="leadsTotalRemaining"><?php echo $leadsModel->getTotalUnansweredLeads()?></span> <?php echo get_real_site_url()?></p>
-<p>
-	<?php echo $leadsLink?>
-	<?php echo $crmLink?>
-	<?php echo $statisticsLink?>
-	<?php echo $sourcesLink?>
-	<?php echo $usersLink?>
-	<?php echo $notificationsLink?>
-	<?php echo $otherOptionsLink?>
-	<?php echo $helpLink?>
-</p>
+<p><b> leads left this month: <?php echo $leadsModel->leadsLeft()?>.</b> Upgrade <a href="https://www.59sec.com/prices/">now</a>.</p>
+<ul class="subsubsub">
+	<li><?php echo $leadsLink?></li>
+	<li><?php echo $crmLink?></li>
+</ul>
+<br class="clear-subsubsub"/>
+<ul class="subsubsub">
+	<li><?php echo $statisticsLink?></li>
+	<li><?php echo $sourcesLink?></li>
+	<li><?php echo $usersLink?></li>
+	<li><?php echo $notificationsLink?></li>
+	<li><?php echo $otherOptionsLink?></li>
+	<li><?php echo $helpLink?></li>
+</ul>
 <h2>Leads</h2>
 Important!!! After grabbing the lead, call it immediately!
 <div id="wrapper-leads">

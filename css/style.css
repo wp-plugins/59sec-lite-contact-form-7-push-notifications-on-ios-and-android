@@ -3,63 +3,30 @@ a.try-fix {font-weight:bold; text-decoration:underline;}
 .rs-table a.button { font-size: 18px; font-weight: bold; color: #fff; text-shadow: 1px 1px 0 #689324; text-transform: uppercase; text-align: center; box-shadow: 0 1px 0 0 #C1ED9C; border: 1px solid #83C41A; border-radius: 0; background: #8CB82B; display: block;}
 .rs-table a.button:hover { color: #444; background: #8CB82B;}
 
-#popup-note
-{
-	height:auto;
-	width:550px;
-	margin-left:-225px;
-	padding:10px 5px;
-	background:#ccc;
-	border:1px solid #fff;
-	position:fixed;
-	top:100px;
-	left:50%;
-	display:none;
-}
-.popup-note-close
-{
-	float:right;
-}
-#music
-{
-	display:none;
-}
-.fiftyninesec-day
-{
-	width:120px;
-	float:left;
-}
-.crm-paging .active
-{
-	font-weight:bold;
-	color:#000000;
-}
+.subsubsub {overflow: hidden; margin:10px 0px 10px 0px;}
+.subsubsub a.link-leads,
+.subsubsub a.link-crm {padding: 3px 10px; background: #0074a2; color:#fff;}
+.clear-subsubsub {line-height:0px; height:0px; font-size:0px; clear:left;}
 
+.wrapper-leads {padding-right: 10px;}
+.widefat td,
+.widefat th {word-wrap: break-word; word-break: break-all;}
+
+h1, h2, h3 {clear: both;}
+
+#popup-note { height:auto;	width:550px; margin-left:-225px; padding:10px 5px;	background:#ccc; border:1px solid #fff;	position:fixed;	top:100px;	left:50%; display:none;}
+.popup-note-close {float:right; padding: 5px;}
+#music {display:none;}
+.fiftyninesec-day {	width:120px; float:left;}
+.crm-paging .active { font-weight:bold; color:#000000;}
 /* Tables */
 .fiftyninesec_table th,
-.fiftyninesec_table.widefat th
-{
-	font-weight:bold;
-	text-transform:uppercase;
-}
+.fiftyninesec_table.widefat th {font-weight:bold; text-transform:uppercase;}
 .fiftyninesec_table th:first-child,
-.fiftyninesec_table.widefat th:first-child
-{
-	padding:8px 10px;
-}
-.fiftyninesec_table td.nothing-here
-{
-	text-align:center;
-}
-.fiftyninesec_table th.status
-{
-	width:170px;
-}
-tr.notice-row
-{
-	background-color:#FEF7F1;
-	display:none;
-}
+.fiftyninesec_table.widefat th:first-child { padding:8px 10px;}
+.fiftyninesec_table td.nothing-here { text-align:center;}
+.fiftyninesec_table th.status {	width:170px;}
+tr.notice-row {	background-color:#FEF7F1; display:none;}
 
 /* Force table to not be like tables anymore */
 .rs-table.mobile,
@@ -67,85 +34,26 @@ tr.notice-row
 .rs-table.mobile tbody,
 .rs-table.mobile th,
 .rs-table.mobile td,
-.rs-table.mobile tr {
-display: block;
-}
+.rs-table.mobile tr {display: block;}
  
 /* Hide table headers (but not display: none;, for accessibility) */
-.rs-table.mobile thead tr {
-position: absolute;
-top: -9999px;
-left: -9999px;
-}
+.rs-table.mobile thead tr {position: absolute; top: -9999px; left: -9999px;}
  
 .rs-table.mobile tr { border: 1px solid #ccc; }
 .rs-table.mobile td {
 /* Behave like a "row" */
-border: none;
-border-bottom: 1px solid #eee;
-position: relative;
-padding-left: 50%;
-white-space: normal;
-text-align:left;
-}
-
- .rs-table.mobile td:before {
-/* Now like a table header */
-position: absolute;
-/* Top/left values mimic padding */
-top: 6px;
-left: 6px;
-width: 45%;
-padding-right: 10px;
-white-space: nowrap;
-text-align:left;
-font-weight: bold;
-}
+border: none; border-bottom: 1px solid #eee; position: relative; padding-left: 50%; white-space: normal; text-align:left;}
+ .rs-table.mobile td:before {/* Now like a table header */ position: absolute; /* Top/left values mimic padding */ top: 6px; left: 6px; width: 45%; padding-right: 10px; white-space: nowrap; text-align:left; font-weight: bold;}
  .rs-table.mobile td:before { content: attr(data-title); }
-
 @media only screen and (max-width: 780px) {
-#popup-note
-{
-	height:auto;
-	width:auto;
-	padding:2px;
-	margin:4px;
-	position:fixed;
-	font-size:9px;
-	top:32px;
-	left:0px;
-}
-#popup-note .quicktags-toolbar *
-{
-	font-size:9px !important;
-}
-#popup-note .quicktags-toolbar input
-{
-	max-height:18px;
-}
-#popup-note .mce-btn *
-{
-	font-size:9px !important;
-}
-#popup-note #insert-media-button
-{
-	padding:0px !important;
-	font-size:9px !important;
-}
-#popup-note br
-{
-	display:none;
-}
-#popup-note .button-primary
-{
-	font-size:9px !important;
-	max-height:20px;
-}
-#popup-note textarea
-{
-	max-height:110px;
-}
-
+#popup-note { height:auto; width:auto; padding:2px; margin:4px; position:fixed; top:32px; left:0px;}
+#popup-note .quicktags-toolbar * {	font-size:9px !important;}
+#popup-note .quicktags-toolbar input {	max-height:18px;}
+#popup-note .mce-btn * {font-size:9px !important;}
+#popup-note #insert-media-button {padding:0px !important; font-size:9px !important;}
+#popup-note br {display:none;}
+#popup-note .button-primary { font-size:10px !important; max-height:30px;}
+#popup-note textarea {max-height:110px; resize: none;}
 /* Force table to not be like tables anymore */
 .rs-table,
 .rs-table thead,
@@ -157,11 +65,7 @@ display: block;
 }
  
 /* Hide table headers (but not display: none;, for accessibility) */
-.rs-table thead tr {
-position: absolute;
-top: -9999px;
-left: -9999px;
-}
+.rs-table thead tr {position: absolute; top: -9999px; left: -9999px;}
  
 .rs-table tr { border: 1px solid #ccc; }
 .rs-table td {
@@ -173,7 +77,6 @@ padding-left: 50%;
 white-space: normal;
 text-align:left;
 }
-
  .rs-table td:before {
 /* Now like a table header */
 position: absolute;
@@ -187,18 +90,9 @@ text-align:left;
 font-weight: bold;
 }
  .rs-table td:before { content: attr(data-title); }
+ .rs-table select {max-width: 100%;}
 }
-
-.current_lead td{
-	color:#FF0000;
-}
-.sortable {
-	cursor:pointer;
-}
-
-.asc {
-	background:url(../images/aup.png) 60% 60% no-repeat;	
-}
-.desc {
-	background:url(../images/adown.png) 60% 60% no-repeat;	
-}
+.current_lead td {color:#FF0000;}
+.sortable {	cursor:pointer;}
+.asc {background:url(../images/aup.png) 60% 60% no-repeat;}
+.desc {	background:url(../images/adown.png) 60% 60% no-repeat;}

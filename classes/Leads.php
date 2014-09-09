@@ -192,6 +192,30 @@ class Leads
 	}
 	
 	/**
+	 * how many leads left ?
+	 */
+	public function leadsLeft()
+	{
+		$since = strtotime('first day of this month');
+		$since = addslashes($since);
+		$total = 0;
+		
+		$sql = "SELECT COUNT(*) AS `tot`
+				FROM `{$this -> _prefix}59_leads`
+				WHERE `created_time` > '{$since}'
+				";
+				
+		$r = $this -> _db -> get_row($sql, ARRAY_A);
+
+		if (!empty($r))
+		{
+			$total = $r['tot'];
+		}
+		
+		return 20 - $total;
+	}
+	
+	/**
 	 * Get the latest contact form 7 leads
 	 * @used: on leads page
 	 */

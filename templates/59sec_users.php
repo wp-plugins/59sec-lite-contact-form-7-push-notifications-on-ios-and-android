@@ -1,14 +1,17 @@
 <p>UNANSWERED LEADS: <?php echo $leadsModel->getTotalUnansweredLeads()?></p>
-<p>
-	<?php echo $leadsLink?>
-	<?php echo $crmLink?>
-	<?php echo $statisticsLink?>
-	<?php echo $sourcesLink?>
-	<?php echo $usersLink?>
-	<?php echo $notificationsLink?>
-	<?php echo $otherOptionsLink?>
-	<?php echo $helpLink?>
-</p>
+<ul class="subsubsub">
+	<li><?php echo $leadsLink?></li>
+	<li><?php echo $crmLink?></li>
+</ul>
+<br class="clear-subsubsub"/>
+<ul class="subsubsub">
+	<li><?php echo $statisticsLink?></li>
+	<li><?php echo $sourcesLink?></li>
+	<li><?php echo $usersLink?></li>
+	<li><?php echo $notificationsLink?></li>
+	<li><?php echo $otherOptionsLink?></li>
+	<li><?php echo $helpLink?></li>
+</ul>
 <h2>Users</h2>
 <p>Explanation: Wordpress administrators have full access by default, as sales manager! </p>
 <h3>Sales Agents</h3>

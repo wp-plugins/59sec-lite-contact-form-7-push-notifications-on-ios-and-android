@@ -1,14 +1,17 @@
 <p>UNANSWERED LEADS: <?php echo $leadsModel->getTotalUnansweredLeads()?> <?php echo get_real_site_url()?></p>
-<p>
-	<?php echo $leadsLink?>
-	<?php echo $crmLink?>
-	<?php echo $statisticsLink?>
-	<?php echo $sourcesLink?>
-	<?php echo $usersLink?>
-	<?php echo $notificationsLink?>
-	<?php echo $otherOptionsLink?>
-	<?php echo $helpLink?>
-</p>
+<ul class="subsubsub">
+	<li><?php echo $leadsLink?></li>
+	<li><?php echo $crmLink?></li>
+</ul>
+<br class="clear-subsubsub"/>
+<ul class="subsubsub">
+	<li><?php echo $statisticsLink?></li>
+	<li><?php echo $sourcesLink?></li>
+	<li><?php echo $usersLink?></li>
+	<li><?php echo $notificationsLink?></li>
+	<li><?php echo $otherOptionsLink?></li>
+	<li><?php echo $helpLink?></li>
+</ul>
 <h2>CRM</h2>
 Much more great features available in 59sec PRO version. <a href="http://www.59sec.com">Upgrade now!</a>
 <?php foreach ($items as $item):?>

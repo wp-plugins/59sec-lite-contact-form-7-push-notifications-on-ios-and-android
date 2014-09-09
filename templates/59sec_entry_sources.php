@@ -1,14 +1,17 @@
 <p>UNANSWERED LEADS: <?php echo $leadsModel->getTotalUnansweredLeads()?></p>
-<p>
-	<?php echo $leadsLink?>
-	<?php echo $crmLink?>
-	<?php echo $statisticsLink?>
-	<?php echo $sourcesLink?>
-	<?php echo $usersLink?>
-	<?php echo $notificationsLink?>
-	<?php echo $otherOptionsLink?>
-	<?php echo $helpLink?>
-</p>
+<ul class="subsubsub">
+	<li><?php echo $leadsLink?></li>
+	<li><?php echo $crmLink?></li>
+</ul>
+<br class="clear-subsubsub"/>
+<ul class="subsubsub">
+	<li><?php echo $statisticsLink?></li>
+	<li><?php echo $sourcesLink?></li>
+	<li><?php echo $usersLink?></li>
+	<li><?php echo $notificationsLink?></li>
+	<li><?php echo $otherOptionsLink?></li>
+	<li><?php echo $helpLink?></li>
+</ul>
 <h2>Entry Sources</h2>
 <p>Select the leads source. You can add one  contact form (generated with Contact Form 7 plugin). All the leads generated  will be visible under the "LEADS" tab. Don't forget to install 59sec iOS or Android app on your phone to receive the notifications!</p>
 <form id="sourceForm" name="sourceForm" method="post" action="">

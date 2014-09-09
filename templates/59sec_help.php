@@ -1,14 +1,17 @@
 <p>UNANSWERED LEADS: <?php echo $leadsModel->getTotalUnansweredLeads()?></p>
-<p>
-	<?php echo $leadsLink?>
-	<?php echo $crmLink?>
-	<?php echo $statisticsLink?>
-	<?php echo $sourcesLink?>
-	<?php echo $usersLink?>
-	<?php echo $notificationsLink?>
-	<?php echo $otherOptionsLink?>
-  	<?php echo $helpLink?>
-</p>
+<ul class="subsubsub">
+	<li><?php echo $leadsLink?></li>
+	<li><?php echo $crmLink?></li>
+</ul>
+<br class="clear-subsubsub"/>
+<ul class="subsubsub">
+	<li><?php echo $statisticsLink?></li>
+	<li><?php echo $sourcesLink?></li>
+	<li><?php echo $usersLink?></li>
+	<li><?php echo $notificationsLink?></li>
+	<li><?php echo $otherOptionsLink?></li>
+	<li><?php echo $helpLink?></li>
+</ul>
 <h2>Help</h2>
 <h3>What does the 59sec LITE do?</h3>
 <p>59sec LITE helps companies to answer leads (or new contacts) under 1 minute (59 seconds). Why? Because studies done by MIT and Kellogg (<a href="http://www.forbes.com/sites/marketshare/2012/05/22/when-it-comes-to-inbound-marketing-time-is-definitely-of-the-essence/" target="_blank">published here on Forbes</a>) show that answering a lead in 5 minutes versus 30 seconds means 21x more chances to close the sale. So, we are helping you answer under 1 minute, not in 5. :)</p>

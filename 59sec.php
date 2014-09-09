@@ -4,7 +4,7 @@
  * Plugin Name: 59sec lite
  * Plugin URI: http://www.59sec.com
  * Description: 59sec lite sends Contact Form 7 push notifications on your iOS or Android mobile device. Also 59sec lite helps you increase sales conversions by decreasing the response time under 59 seconds. Upgrade to 59sec PRO now at <a href="https://www.59sec.com" target="_blank">www.59sec.com</a>! Awsome premium features that will boost your sales. Free 30 days trial, no strings attached!
- * Version: 3.2
+ * Version: 3.3
  * Author: Kuantero.com
  * Author URI: http://www.kuantero.com
  * License: GNU
@@ -25,7 +25,7 @@ GNU General Public License for more details.
 */
 
 // init
-define('_59SEC_VERSION', '3.2');
+define('_59SEC_VERSION', '3.3');
 
 define('_59SEC_INCLUDE_PATH', dirname(realpath(__FILE__)));
 
@@ -92,7 +92,7 @@ function _59sec_checkstatus()
 {
 	$key = md5(get_real_site_url());
 
-	$url = 'http://59sec.com/licence/lc.php?key='.$key.'&domain='.get_real_site_url().'&lite=1';
+	$url = 'http://59sec.com/licence/lc.php?key='.$key.'&domain='.get_real_site_url().'&lite=1&realdomain='.site_url();
 
 	//set 5 sec timeout
 	$ctx = stream_context_create(array('http'=>array('timeout' => 5)));
@@ -256,13 +256,13 @@ function _59sec_load_page()
 	$pluginkey = md5(get_real_site_url());
 	$leadsModel = new Leads($wpdb, $wpdb->prefix);
 
-	$leadsLink = '<a href="?page=59sec_leads_boss">LEADS</a><span>/</span>';
-	$crmLink = '<a href="?page=59sec_crm_boss">CRM</a><span>/</span>';
-	$statisticsLink = '<a href="?page=59sec_statistics_boss">Statistics</a><span>/</span>';
-	$sourcesLink = '<a href="?page=59sec_entry_sources">Entry Sources</a><span>/</span>';
-	$usersLink = '<a href="?page=59sec_users">Users</a><span>/</span>';
-	$notificationsLink = '<a href="?page=59sec_notifications">Notifications</a><span>/</span>';
-	$otherOptionsLink = '<a href="?page=59sec_other_options">Other Options</a><span>/</span>';
+	$leadsLink = '<a href="?page=59sec_leads_boss" class="link-leads">LEADS</a><span>|</span>';
+	$crmLink = '<a href="?page=59sec_crm_boss" class="link-crm">CRM</a>';
+	$statisticsLink = '<a href="?page=59sec_statistics_boss">Statistics</a><span>|</span>';
+	$sourcesLink = '<a href="?page=59sec_entry_sources">Entry Sources</a><span>|</span>';
+	$usersLink = '<a href="?page=59sec_users">Users</a><span>|</span>';
+	$notificationsLink = '<a href="?page=59sec_notifications">Notifications</a><span>|</span>';
+	$otherOptionsLink = '<a href="?page=59sec_other_options">Other Options</a><span>|</span>';
 	$helpLink = '<a href="?page=59sec_help_boss">Help</a>';
 
 	// add css file
@@ -697,8 +697,9 @@ function _59sec_autologin()
 {
 	global $wpdb, $current_user;
 	
-	$fromDomain = str_replace('http://', '', $_SERVER['HTTP_HOST']);
-	$fromDomain = 'http://'.$fromDomain;
+	$base_root = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') ? 'https://' : 'http://';
+    $fromDomain = str_replace($base_root, '', $_SERVER['HTTP_HOST']);
+    $fromDomain = $base_root.$_SERVER['HTTP_HOST'];
 	//account for subfolders
 	$base = pathinfo($_SERVER["REQUEST_URI"]);
 	$base = $base['dirname'];

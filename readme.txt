@@ -3,8 +3,8 @@
 Contributors: kuantero
 Tags: leads, crm, clients, sales, contact form 7, cf 7, contact forms, forms, push notifications, ios, android, pus notification, contact form 7 push notifications, contact, counter, integration, iphone, mobile, notification, plugin, 59sec, 59 sec, leads management system, leads management
 Requires at least: 3.3  
-Tested up to: 3.9.2  
-Stable tag: 3.2
+Tested up to: 4.0  
+Stable tag: 3.3
 
 Mandatory Tool For Sales Departments! 59sec helps companies answer leads under 59 seconds, boosting sales conversions! Check the facts!
 
@@ -181,6 +181,12 @@ More options available on 59sec PRO!
 
 
 == Changelog ==
+
+**What's new in 59sec lite version 3.3. - ?**
+
+The LEADS/CRM buttons more visible for mobile usage.
+Counter for remaining leads, so you'll know how many you still have for this month.
+
 
 **What's new in 59sec lite version 3.2. - ?**
 
