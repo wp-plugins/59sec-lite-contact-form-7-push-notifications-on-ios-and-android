@@ -1,5 +1,10 @@
 <?php
 
+if (!isset($sound) || empty($sound))
+{
+	$sound = 'cashregister.aiff';
+}
+
 //send push notifications to devices
 $devices = $leadsModel -> getAppTokens();
 
@@ -11,9 +16,10 @@ foreach($devices as $device)
 	$i++;
 }
 
-
+$leadsModel -> agentNotified($lead);
 $message = $leadsModel -> leadAsMail($lead);
 $message = substr($message, 0, 150);
+$payload = array();
 
 if(!empty($deviceTokens))
 {
@@ -23,25 +29,26 @@ if(!empty($deviceTokens))
 		{
 			$payload['device_tokens'][] = $deviceTokens[$i];
 		}
-		$payload['aps'] = array('alert' => "$message", 'sound' => 'cashregister.aiff', 'badge' => 1);
+		$payload['aps'] = array('alert' => "$message", 'sound' => $sound, 'badge' => 1);
 	}
 	
-	$payload['domain'] = get_real_site_url();
-	$payload = "json=".serialize($payload);
+	$payload['domain'] = site_url();
+	$payload = "json=".urlencode(json_encode($payload));
 	
-	$url = 'https://www.59sec.com/notifications.php';
+	$url = 'https://www.59sec.com/notifications_json.php';
 
 	$ch = curl_init();
 
 	curl_setopt($ch, CURLOPT_URL,$url);
 	
 	if (ini_get('open_basedir') == '' && ini_get('safe_mode') == 'Off')
-		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
 	
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-	curl_setopt($ch, CURLOPT_POST, 1);
-	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER , 0);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+	curl_setopt($ch, CURLOPT_POST, TRUE);
+	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER , FALSE);
 	curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
 
 	curl_exec($ch);
+	curl_close($ch);
 }

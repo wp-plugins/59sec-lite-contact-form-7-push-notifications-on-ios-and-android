@@ -3,10 +3,10 @@
 Contributors: kuantero
 Tags: leads, crm, clients, sales, contact form 7, cf 7, contact forms, forms, push notifications, ios, android, pus notification, contact form 7 push notifications, contact, counter, integration, iphone, mobile, notification, plugin, 59sec, 59 sec, leads management system, leads management
 Requires at least: 3.3  
-Tested up to: 4.0  
-Stable tag: 3.3
+Tested up to: 4.1  
+Stable tag: 3.4
 
-Mandatory Tool For Sales Departments! 59sec helps companies answer leads under 59 seconds, boosting sales conversions! Check the facts!
+Need conversions 21 times higher? Use the amazing 59sec. 59sec helps companies answer leads under 59 seconds, boosting sales conversions! Test it now!
 
 
 == Description ==
@@ -24,12 +24,13 @@ This will BOOST your conversion rates, because the potential clients will be blo
 **AWESOME FEATURES**
 
 * Connects your site to your sales agents mobile devices ([iOS](https://itunes.apple.com/us/app/59sec/id851174210?mt=8), [Android](https://play.google.com/store/apps/details?id=com.kuantero.fiftyninesec) and soon, Windows).
-* Sends push notifications to your sales agents when a new lead is generated
+* Sends push notifications to your sales agents when a new lead is generated. You'll here a cool cash register sound each time you have a new lead
+* Reminders that you're wasting money: after 10 and 30 minutes since lead generation moment. In sales, speed is crucial!
 * Leads entry source: Contact Form 7 plugin 
-* Sales agents can respond to leads from phone, tablet, computer
-* Statistics - so you, the boss, will know how effective is your sales team
+* Sales agents can grab and respond to leads from phone, tablet, computer. Super easy!
+* Statistics - so you, the boss, will know how effective is your sales team. Who to fire and who to bonus for job well done
 * Time tracking - each lead has it's own seconds counter, to monitor the response time. Faster responses => More conversions
-* CRM - a simple CRM to help lead nurturing
+* CRM - a simple CRM to help lead nurturing (59sec ENTERPRISE has integration with any CRM from the planet)
  * Time taken for each lead
  * Lead date
  * Agent who grabbed the lead
@@ -37,31 +38,31 @@ This will BOOST your conversion rates, because the potential clients will be blo
  * Status selector
  * Comments editor
 
-[More features available at 59sec PRO.](https://www.59sec.com/prices/)
+[Much more fantastic features available at 59sec PRO and ENTERPRISE](https://www.59sec.com/prices/)
 
 **59sec VERSIONS:**
 
 * 59sec LITE (this one, with limited features, but very effective if you have just a few leads per month!)
-* 59sec PRO (costs just $59/month, full of extraordinary features, almost any limitations)
+* 59sec PRO (costs just $59/month, full of extraordinary features, almost no limitations)
 * 59sec Enterprise (for big boys)
 
 
 **WHY 59sec WORKS SO WELL?**
 
 1. Because calling a potential client under 59 seconds clearly EXCEEDS his expectations.
-2. Because it generates WOW Factor and can convert the lead instantly.
+2. Because it generates WOW Factor and you can convert the lead instantly.
 3. Because it deters the potential client to ask for more offers from competitors. ;)
 
-When a new Contact Form 7 form is submitted, all sales agents get a push notification on their iOS and Android devices!
+When a new form is submitted, all sales agents get a push notification on their iOS and Android devices!
 Also, 59sec has a lead management procedure to help the sales team nurture the lead until it become a sale.
 
 
-**WHO SHOULD USE 59sec**
+**WHO IS USING 59sec**
 
 By Company Type:
 
-* Any company with 1-10,000 respondents, that receives online leads
-* Any company that wants a stronger differentiation point versus competition
+* Companies that receives online leads
+* Companies that wants a stronger differentiation point versus competition. And answering under 59 seconds is a GREAT differentiation!
 * PPC agencies (to help their clients convert more leads)
 
 
@@ -83,16 +84,16 @@ By Department Type:
 
 * First you install the 59sec lite wordpress plugin on your site. Done!
 * Second, you set up the plugin. Specify the "Entry Source" from the existing Contact Form 7 forms.
-* Third, you put everybody from the sales team to install the mobile apps from iOS's App Store or Android's Google Play. It's free.
+* Third, you put everybody from the sales team to install the mobile apps from iOS's App Store or Android's Google Play. It's free and takes 2 minutes.
 * Under `Users` tab, you will get a Secret Key (32 chars, alpha numeric). Insert this key on the mobile app, to connect the app to your site.
 
-That's it! You can start testing it.
+That's it! You can start grabbing leads.
 
 
 [youtube http://www.youtube.com/watch?v=bFjwh1mNeAQ]
 
 
-**TEST 59sec LITE**
+**TEST 59sec LITE IN 3 MINUTES**
 
 * Visit www.59sec.com/test/. 
 * Install the 59sec mobile app on your device (from [Google Play](https://play.google.com/store/apps/details?id=com.kuantero.fiftyninesec) or [AppStore](https://itunes.apple.com/us/app/59sec/id851174210?mt=8).
@@ -181,6 +182,14 @@ More options available on 59sec PRO!
 
 
 == Changelog ==
+
+**What's new in 59sec lite version 3.4. - ?**
+
+Reminders at 10 minutes and 30 minutes, to whip your agents not to waste time and money and answer those leads!
+Feedback line implemented
+Boss notification via email
+Daily reminder if, god forbidden, you have leads that are unanswered from the last day
+Mail alert subscribing (because 59sec is a business critical service, you should know when we have new things to tell you)
 
 **What's new in 59sec lite version 3.3. - ?**
 

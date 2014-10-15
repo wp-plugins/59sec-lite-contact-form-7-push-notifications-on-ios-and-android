@@ -1,5 +1,5 @@
 <p>UNANSWERED LEADS: <span class="leadsTotalRemaining"><?php echo $leadsModel->getTotalUnansweredLeads()?></span> <?php echo get_real_site_url()?></p>
-<p><b> leads left this month: <?php echo $leadsModel->leadsLeft()?>.</b> Upgrade <a href="https://www.59sec.com/prices/">now</a>.</p>
+<p><b> LEADS left this month: <?php echo $leadsModel->leadsLeft()?>.</b> Upgrade <a href="https://www.59sec.com/prices/">now</a>.</p>
 <ul class="subsubsub">
 	<li><?php echo $leadsLink?></li>
 	<li><?php echo $crmLink?></li>
@@ -29,4 +29,4 @@ jQuery(document).ready(function() {
 	window.is_boss_59sec = <?php echo $isBoss?>;
 	initTimers();
 });
-  </script>
+</script>

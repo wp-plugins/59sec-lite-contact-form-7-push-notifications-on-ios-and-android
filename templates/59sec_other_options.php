@@ -14,7 +14,7 @@
 </ul>
 <h2>Other options</h2>
 <p>Manage your own plugin options.</p>
-<form method="post" action="options.php">
+<form id="form59" name="form59" method="post" action="">
 	<?php settings_fields('59sec-other-options');?>
 	<table class="form-table">
 		<tr>

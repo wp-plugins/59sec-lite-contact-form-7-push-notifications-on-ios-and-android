@@ -2,9 +2,9 @@
 
 /**
  * Plugin Name: 59sec lite
- * Plugin URI: http://www.59sec.com
- * Description: 59sec lite sends Contact Form 7 push notifications on your iOS or Android mobile device. Also 59sec lite helps you increase sales conversions by decreasing the response time under 59 seconds. Upgrade to 59sec PRO now at <a href="https://www.59sec.com" target="_blank">www.59sec.com</a>! Awsome premium features that will boost your sales. Free 30 days trial, no strings attached!
- * Version: 3.3
+ * Plugin URI: https://www.59sec.com
+ * Description: 59sec lite sends Contact Form 7 push notifications on your iOS or Android mobile device. Also 59sec lite helps you increase sales conversions by decreasing the response time under 59 seconds. Upgrade to 59sec PRO now at <a href="http://www.59sec.com" target="_blank">www.59sec.com</a>! Awsome premium features that will boost your sales. Free 30 days trial, no strings attached!
+ * Version: 3.4
  * Author: Kuantero.com
  * Author URI: http://www.kuantero.com
  * License: GNU
@@ -25,11 +25,24 @@ GNU General Public License for more details.
 */
 
 // init
-define('_59SEC_VERSION', '3.3');
+define('_59SEC_VERSION', '3.4.0');
 
 define('_59SEC_INCLUDE_PATH', dirname(realpath(__FILE__)));
 
 define('_59SEC_PLUGINS_URL', plugin_dir_url(__FILE__));
+
+define('_59SEC_HEADRES_FROM', 'From: '.get_bloginfo('name').' 59sec <'.get_bloginfo('admin_email').'>');
+
+/* WP cron is not reliable, so we check every chance we get */
+function _59sec_check_cron()
+{
+	// list of tasks
+	if (get_option('59sec_status', 'OK') == 'OK')
+	{
+		_59sec_boss_alert_cron();
+		_59sec_notifications_cron();
+	}
+}
 
 /**
 * Shhh!!
@@ -92,7 +105,7 @@ function _59sec_checkstatus()
 {
 	$key = md5(get_real_site_url());
 
-	$url = 'http://59sec.com/licence/lc.php?key='.$key.'&domain='.get_real_site_url().'&lite=1&realdomain='.site_url();
+	$url = 'https://59sec.com/licence/lc.php?key='.$key.'&domain='.get_real_site_url().'&lite=1&realdomain='.site_url();
 
 	//set 5 sec timeout
 	$ctx = stream_context_create(array('http'=>array('timeout' => 5)));
@@ -171,11 +184,15 @@ function _59sec_settings_link($links)
  */
 function register_59sec_options()
 {
+	// notofications
+	register_setting('59sec-notifications', '59sec_bosses');
 	// entry sources
 	register_setting('59sec-entry-sources', '59sec_wpcf7');
 	// other options
 	register_setting('59sec-other-options', '59sec_direct_login');
 	register_setting('59sec-other-options', '59sec_leadscheck');
+	// subscribe
+	register_setting('59sec-subscribe', '59sec_subscribe_mail');
 }
 
 /* Install - Uninstall */
@@ -200,6 +217,19 @@ function _59sec_install()
 
 	// add live update cache
 	update_option('59sec_liveupdate', time());
+	
+	// give admin agent rights
+	$args = array(
+		'blog_id' => $GLOBALS['blog_id'],
+		'role' => 'Administrator',
+	);
+
+	$users = (array) get_users($args);
+
+	foreach ($users as $user)
+	{
+		$user -> add_cap('agent');
+	}
 	
 	// register plugin key
 	$response = _59sec_checkstatus();
@@ -241,6 +271,7 @@ function _59sec_admin_menu()
 	add_submenu_page('59sec_entry_sources', 'Notifications', 'Notifications', $cap, '59sec_notifications', '_59sec_load_page');
 	add_submenu_page('59sec_entry_sources', 'Other Options', 'Other Options', $cap, '59sec_other_options', '_59sec_load_page');
 	add_submenu_page('59sec_entry_sources', 'Help', 'Help', $cap, '59sec_help_boss', '_59sec_load_page');
+	add_submenu_page('59sec_entry_sources', 'Please Feedback!', 'Please Feedback!', $cap, '59sec_feedback', '_59sec_load_page');
 }
 
 /**
@@ -276,6 +307,9 @@ function _59sec_load_page()
 		$plugin_page = 'warning';
 	}
 
+	// add subscribe message
+	require_once "templates/59sec_subscribe.php";
+	
 	// get the data
 	switch($plugin_page)
 	{
@@ -294,6 +328,24 @@ function _59sec_load_page()
 
 			$items =  WPCF7_ContactForm::find($args);
 			$forms = (array) get_option('59sec_wpcf7');			
+			break;
+		case '59sec_notifications':		
+			$args = array(
+				'blog_id'      => $GLOBALS['blog_id'],
+				'orderby'      => 'login',
+				'order'        => 'ASC',
+				'count_total'  => false,
+			);
+			$users = get_users($args);
+			
+			foreach ($users as $user)
+			{
+				$bosses[] = $user->data->user_email;
+			}
+			
+			update_option('59sec_bosses', $bosses);
+			
+			$bosses = get_option('59sec_bosses');
 			break;
 		case '59sec_leads_boss':
 			$isBoss = true;
@@ -356,6 +408,12 @@ function _59sec_load_page()
 			}
 			break;
 		case '59sec_other_options':
+			if (!empty($_POST))
+			{
+				update_option('59sec_direct_login', $_POST['59sec_direct_login']);
+				update_option('59sec_leadscheck', $_POST['59sec_leadscheck']);
+			}
+			
 			$direct_login = get_option('59sec_direct_login', 1) * 1;
 			$leadscheck = get_option('59sec_leadscheck', 3);
 			break;
@@ -363,6 +421,149 @@ function _59sec_load_page()
 	
 	// the view
 	require_once "templates/{$plugin_page}.php";
+}
+
+/**
+ * Send bosses email alert if 600 sec have passed
+ */
+function _59sec_boss_alert_cron()
+{
+	global $wpdb;
+	
+	require_once 'classes/Leads.php';
+	
+	$leadsModel = new Leads($wpdb, $wpdb->prefix);
+	
+	// get bosses
+	$users = get_option('59sec_bosses', array());
+	
+	if (empty($users))
+	{
+		$args = array(
+			'blog_id'      => $GLOBALS['blog_id'],
+			'orderby'      => 'login',
+			'order'        => 'ASC',
+			'count_total'  => false,
+			'role' => 'administrator',
+		);
+		$bosses = get_users($args);
+		
+		foreach ($users as $user)
+		{
+			$users[] = $user->data->user_email;
+		}
+		
+		update_option('59sec_bosses', $users);
+	}
+	
+	// send first boss alert
+	$bossalert = 600;
+	$leads = $leadsModel -> getBossAlertLeads($bossalert);
+	
+	if (!empty($leads))
+	{
+		$message = "
+Dear 59sec power user
+
+You are losing money because you/your team did not grab this lead fast enough:
+
+		";
+		
+		foreach ($leads as $lead)
+		{
+			$message .= $leadsModel -> leadAsMail($lead);
+			// do not send mail twice
+			$leadsModel -> bossAlerted($lead);
+		}
+
+		$message .=  "
+
+Remember!
+Answering a lead in 5 minutes increase the likelihood to close the sale 21 times more than answering in 30 minutes. (source: MIT and Kellogg study)
+
+Good luck :)
+
+59sec Team
+go@59sec.com
+https://www.59sec.com
+		";
+		
+		foreach ($users as $boss)
+		{
+			wp_mail($boss, 'Lead Expired! You are losing money!', $message, array(_59SEC_HEADRES_FROM));
+		}
+	}
+
+	// run only once a day
+	$boss_daily_cron = intval(get_option('59sec_boss_daily_cron', 0));
+
+	if (empty($boss_daily_cron) || $boss_daily_cron < time())
+	{
+		// send daily boss alerts
+		$leads = $leadsModel -> getBossDailyAlerts();
+
+		if (!empty($leads))
+		{
+			$total = count($leads);
+			$message = "Dear owner,\n\nYesterday you had {$total} leads unanswered. This means wasted opportunities. Please make sure that your agents are grabbing the leads using 59sec as soon as possible. We love when you make money :)\n\n";
+			
+			foreach ($leads as $lead)
+			{
+				$message .= $leadsModel -> leadAsMail($lead);
+			}
+			
+			$message .= "
+
+Thank you
+59sec Team
+go@59sec.com
+https://www.59sec.com";		
+			
+			foreach ($users as $boss)
+			{
+				wp_mail($boss, 'Wasted leads from yesterday @ '.site_url(), $message, array(_59SEC_HEADRES_FROM));
+			}
+		}
+		
+		// run only once a day
+		update_option('59sec_boss_daily_cron', time() + 86400);
+	}
+}
+
+/**
+ * Resend notifications 3 times 10 min apart
+ */
+function _59sec_notifications_cron()
+{
+	global $wpdb;
+	
+	require_once 'classes/Leads.php';
+	
+	$leadsModel = new Leads($wpdb, $wpdb->prefix);
+
+	// did 20 min pass?
+	$leads = $leadsModel -> getNotificationCronLeads20();
+
+	if (!empty($leads))
+	{
+		$sound = 'cashregister3.aif';
+		foreach ($leads as $lead)
+		{
+			include _59SEC_INCLUDE_PATH.'/simplepush.php';
+		}
+	}
+	
+	// did just 10 min pass?
+	$leads = $leadsModel -> getNotificationCronLeads10();
+	
+	if (!empty($leads))
+	{
+		$sound = 'cashregister2.aif';
+		foreach ($leads as $lead)
+		{
+			include _59SEC_INCLUDE_PATH.'/simplepush.php';
+		}
+	}
 }
 
 /* Hook into wpcf7 */
@@ -420,7 +621,7 @@ function hook_wpcf7($cf7)
 			'postdata' => serialize($postdata),
 		);
 		
-		$leadsModel -> add($lead);
+		$lead['id'] = $leadsModel -> add($lead);
 		
 		// update timestamp for liveupdate
 		update_option('59sec_liveupdate', time());
@@ -431,10 +632,10 @@ function hook_wpcf7($cf7)
 		
 		foreach ($emails as $email)
 		{
-			wp_mail($email, 'Agent Notification', $message);
+			wp_mail($email, 'Agent Notification', $message, array(_59SEC_HEADRES_FROM));
 		}
 		
-		// send iphone notification
+		// send device notification
 		include_once _59SEC_INCLUDE_PATH.'/simplepush.php';
 	}// IF
 }
@@ -460,7 +661,6 @@ function _59sec_grabit()
 			), $_POST['id']);
 			
 			update_option('59sec_liveupdate', time());
-			echo $result;
 		}
 		else
 		{
@@ -674,7 +874,7 @@ function _59sec_login_redirect($redirect_to, $request, $user)
 function _59sec_unaswered()
 {
 	global $wpdb;
-	
+
 	if(
 		isset($_POST['device_token']) &&
 		!empty($_POST['device_token'])
@@ -687,6 +887,164 @@ function _59sec_unaswered()
 		echo $leadsModel -> getTotalUnansweredLeads();
 	}
 	
+	die();
+}
+
+/**
+ * Leads for devices
+ */
+function _59sec_leads()
+{
+	Global $wpdb;
+
+	$response = array();
+	$key = @$_POST['key'];
+	$user_login = _59sec_desalt($key);
+	$key = substr($key, 0, 32);
+	$pluginkey = md5(get_real_site_url());
+
+	if ($key != $pluginkey)
+	{
+		echo json_encode($response);
+		die();
+	}
+		
+	$user = get_user_by('login', $user_login);
+		
+	if (empty($user))
+	{
+		echo json_encode($response);
+		die();
+	}
+
+	$args = array(
+		'posts_per_page' => -1,
+		'orderby' => 'title',
+		'order' => 'ASC',
+		'offset' => 0,
+	);
+	$items =  (_59SEC_REQUIREMENTS) ? WPCF7_ContactForm::find($args) : array();
+	$forms = (array) get_option('59sec_wpcf7');
+	
+	require_once 'classes/Leads.php';
+	$leadsModel = new Leads($wpdb, $wpdb->prefix);
+
+	// contact form 7
+	foreach ($items as $item)
+	{
+		if (!empty($forms) && in_array($item->id, $forms))
+		{
+			$leads = $leadsModel->getNewLeads($item->id);
+		
+			if (!empty($leads))
+			{
+				$response[$item->title] = array();
+				$headers = $leadsModel->tableHeaders($leads);
+				
+				foreach($leads as $key => $lead)
+				{
+					$data = unserialize($lead['postdata']);
+					
+					if (!empty($data))
+					{
+						foreach($headers as $index)
+						{
+							if (is_array($data[$index]))
+							{
+								$data[$index] = implode(', ', $data[$index]);
+							}
+							$data[$index] = strip_tags($data[$index]);
+							$data[$index] = str_replace(array("\n", "\r", "\t"), '', $data[$index]);
+							$data[$index] = trim($data[$index]);
+						}
+						$data['TIME PASSED'] = $lead['created_time'];
+						$data['grab_it_button'] = 'True';
+						$response[$item->title][$lead['id']] = $data;
+					}
+				}
+			}
+		}
+	}
+
+	echo json_encode($response);
+	die();
+}
+
+/**
+ * Device grab lead
+ */
+function _59sec_grab()
+{
+	global $wpdb;
+	
+	$key = @$_POST['key'];
+	$id = @$_POST['id'];
+	$response = new stdClass();
+	$response -> status = 'error';
+	$response -> title = 'Error';
+	$response -> message = '';
+	
+	// check if key is valid
+	$user_login = _59sec_desalt($key);
+	$key = substr($key, 0, 32);
+	
+	if(!empty($key) && !empty($user_login))
+	{
+		$pluginkey = md5(get_real_site_url());
+		
+		if ($key == $pluginkey)
+		{
+			$user = get_user_by('login', $user_login);
+			
+			if (empty($user))
+			{
+				$response -> message = 'Invalid key';
+				echo json_encode($response);
+				exit;
+			}
+			
+			// grab the lead
+			require_once 'classes/Leads.php';
+			
+			$leadsModel = new Leads($wpdb, $wpdb->prefix);
+			$lead = $leadsModel->get($id);
+			
+			if (!empty($lead))
+			{
+				if (empty($lead['user_id']))
+				{
+					$result = $leadsModel -> update(array(
+						'user_id' => $user -> ID,
+						'user_name' => $user -> data -> display_name,
+						'reserved_time' => time(),
+					), $id);
+					
+					$response -> status = 'success';
+					$response -> title = "Success, {$user -> data -> display_name}!";
+					$response -> message = 'Next: call the lead NOW!';
+					echo json_encode($response);
+					update_option('59sec_liveupdate', time());
+				}
+				else
+				{
+					$response -> message = 'Lead grabbed by '.$lead['user_name'];
+					echo json_encode($response);
+				}
+			}
+			else
+			{
+				$response -> message = 'Missing data!';
+				echo json_encode($response);
+			}
+		}
+		else
+		{
+			$response -> message = 'Invalid key';
+			echo json_encode($response);
+		}
+		exit;
+	}
+
 	die();
 }
 
@@ -716,12 +1074,11 @@ function _59sec_autologin()
 	
 	if (is_user_logged_in())
 	{
-		$redirect_url = _59sec_login_redirect(null, null, $current_user);
-		wp_redirect($redirect_url);
+		wp_redirect(_59sec_autologin_redirect());
 		exit;
 	}
 	
-	$key = @$_GET['key'];
+	$key = @$_POST['key'];
 	$user_login = _59sec_desalt($key);
 	$key = substr($key, 0, 32);
 	
@@ -734,8 +1091,7 @@ function _59sec_autologin()
 			$user = get_user_by('login', $user_login);
 			wp_set_current_user($user -> ID, $user -> user_login);
 			wp_set_auth_cookie($user -> ID);
-			$redirect_url = _59sec_login_redirect(null, null, $current_user);
-			wp_redirect($redirect_url);
+			wp_redirect(_59sec_autologin_redirect());
 		}
 		else
 		{
@@ -745,6 +1101,27 @@ function _59sec_autologin()
 	}
 	
 	die();
+}
+
+function _59sec_autologin_redirect()
+{
+	global $current_user;
+	
+	$id = @$_POST['id'];
+	$id = intval($id);
+	
+	if (in_array('administrator', $current_user->roles))
+	{
+		return admin_url() . 'admin.php?page=59sec_crm_boss&lead='.$id;
+	}
+	elseif ($current_user->has_cap('agent'))
+	{
+		return admin_url() . 'admin.php?page=59sec_crm&lead='.$id;
+	}
+	else
+	{
+		return admin_url();
+	}
 }
 
 function _59sec_liveupdate()
@@ -788,8 +1165,14 @@ add_action('wp_ajax_59sec_delete_tokens', '_59sec_delete_tokens');
 add_action('wp_ajax_nopriv_59sec_delete_tokens', '_59sec_delete_tokens');
 add_action('wp_ajax_59sec_save_tokens', '_59sec_save_tokens');
 add_action('wp_ajax_nopriv_59sec_save_tokens', '_59sec_save_tokens');
+add_action('wp_ajax_59sec_leads', '_59sec_leads');
+add_action('wp_ajax_nopriv_59sec_leads', '_59sec_leads');
+add_action('wp_ajax_59sec_grab', '_59sec_grab');
+add_action('wp_ajax_nopriv_59sec_grab', '_59sec_grab');
 add_action('wp_ajax_59sec_autologin', '_59sec_autologin');
 add_action('wp_ajax_nopriv_59sec_autologin', '_59sec_autologin');
+add_action('wp_ajax_59sec_cron', '_59sec_check_cron');
+add_action('wp_ajax_nopriv_59sec_cron', '_59sec_check_cron');
 add_action('wp_ajax_59sec_unaswered', '_59sec_unaswered');
 add_action('wp_ajax_nopriv_59sec_unaswered', '_59sec_unaswered');
 //filters

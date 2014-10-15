@@ -13,7 +13,7 @@
 	<li><?php echo $helpLink?></li>
 </ul>
 <h2>Notifications</h2>
-<form method="post" action="options.php"> 
+<form id="form59" name="form59" method="post" action="">
 	<?php settings_fields('59sec-notifications');?>
 	<table class="form-table">
 		<tr>
@@ -48,16 +48,30 @@
 			<th scope="row"><h3>BOSS NOTIFICATION</h3></th>
 			<td>&nbsp;</td>
 		</tr>
+		<tr id="row-bossemail-notice" class="notice-row">
+			<th scope="row">&nbsp;</th>
+			<td>Changes will not take place untill you click the save button!</td>
+		</tr>
+		<?php if (!empty($bosses)):?>
+		<?php foreach ($bosses as $key => $item):?>
+		<?php if (!empty($item)):?>
+		<tr id="row-bossemail-<?php echo $key?>">
+			<th scope="row">&nbsp;</th>
+			<td>
+				<label for="bossemail-<?php echo $key?>">Email <?php echo ($key + 1)?></label>
+				<input disabled="disabled" id="bossemail-<?php echo $key?>" name="59sec_bosses[]" type="text" value="<?php echo $item?>" class="regular-text">
+				</td>
+		</tr>
+		<?php endif?>
+		<?php endforeach?>
+		<?php endif?>
 		<tr>
 			<th scope="row">&nbsp;</th>
 			<td>
-				<p>
-				  <label>Explanation: </label>
-				The sales manager/business owner can be notified via email that the sales team doesn't do its job properly. So, if a lead is not grabbed in a specific number of seconds you specify, you are getting an alert via email. Very cool feature!</p>
-				<p>
-				  <label><a href="http://www.59sec.com" target="_blank"><strong>Upgrade now to 59sec PRO version!</strong></a></label>
-                  <br />
-                <a href="http://www.59sec.com">First month is FREE, no credit card needed, no strings attached! </a></p></td>
+				<label for="">Alert in :</label>
+				<input name="59sec_bossseconds" type="text" value="600" class="regular-text" disabled="disabled" />
+				<p class="description">Explanation: the number of seconds after a lead arrived until the bosses are alerted by email. Then the boss can follow up on the sales agents why they are not doing their job! Cool, huh? :)</p>
+			</td>
 		</tr>
 		<tr>
 			<th scope="row"><h3>IPHONE NOTIFICATIONS</h3></th>
@@ -95,3 +109,10 @@
 	</table>
 	<?php submit_button()?>
 </form>
+<script type="text/javascript">
+function deleteBossEmail(id) {
+	jQuery('#bossemail-'+id).val('');
+	jQuery('#row-bossemail-'+id).hide();
+	jQuery('#row-bossemail-notice').show();
+}
+</script>

@@ -40,6 +40,7 @@ class Leads
 		`user_id` int(11) DEFAULT NULL,
 		`status` varchar(100) DEFAULT NULL,
 		`boss_alert` int(1) NOT NULL,
+		`agent_alert` int(1) NOT NULL,
 		`type` varchar(10) NOT NULL,
 		`created_time` varchar(10) DEFAULT NULL,
 		`reserved_time` varchar(10) DEFAULT NULL,
@@ -85,6 +86,14 @@ class Leads
 			$sql = "ALTER TABLE `{$this -> _prefix}59_tokens` ADD `uid` INT NOT NULL AFTER `device_token`";
 			$this -> _db -> query($sql);
 		}
+		
+		if ($version < 330)
+		{
+			$sql = "ALTER TABLE `{$this -> _prefix}59_leads` ADD `agent_alert` int(1) NOT NULL AFTER `boss_alert`";
+			$this -> _db -> query($sql);
+			$sql = "UPDATE `{$this -> _prefix}59_leads` SET `agent_alert` = 1";
+			$this -> _db -> query($sql);
+		}
 	}
    
 	/**
@@ -106,6 +115,8 @@ class Leads
 		";
 		
 		$this -> _db -> query($sql);
+		
+		return $this -> _db -> insert_id;
 	}
 	
 	/**
@@ -132,9 +143,7 @@ class Leads
 					WHERE `id` = '$id'
 					";
 					
-			$this -> _db -> query($sql);
-			
-			return $this -> _db -> print_error();
+			@$this -> _db -> query($sql);
 		}
 		else
 		{
@@ -183,7 +192,7 @@ class Leads
 			$total = $results['tot'];
 		}
 		
-		if ($total > 20)
+		if ($total > 20 || $total == 20)
 		{
 			return true;
 		}
@@ -228,6 +237,46 @@ class Leads
 				WHERE `entity_id` = '{$entity_id}'
 					AND `user_id` IS NULL
 					AND `type` = 'form'
+				ORDER BY `created_time` ASC
+				";
+				
+		$results = $this -> _db -> get_results($sql, ARRAY_A);
+		
+		return $results;
+	}
+	
+	/**
+	 * Get the leads that where notified less the 3 times
+	 */
+	public function getNotificationCronLeads10()
+	{
+		$time = time() - 600;
+		
+		$sql = "SELECT *
+				FROM `{$this -> _prefix}59_leads`
+				WHERE `agent_alert` < 2
+					AND `user_id` IS NULL
+					AND `created_time` < '$time'
+				ORDER BY `created_time` ASC
+				";
+				
+		$results = $this -> _db -> get_results($sql, ARRAY_A);
+		
+		return $results;
+	}
+	
+	/**
+	 * Get the leads that where notified less the 3 times
+	 */
+	public function getNotificationCronLeads20()
+	{
+		$time = time() - 1200;
+		
+		$sql = "SELECT *
+				FROM `{$this -> _prefix}59_leads`
+				WHERE `agent_alert` = 2
+					AND `user_id` IS NULL
+					AND `created_time` < '$time'
 				ORDER BY `created_time` ASC
 				";
 				
@@ -399,6 +448,68 @@ class Leads
 		$r = $this -> stripslashes_deep($results);
 		
 		return $r;
+	}
+	
+	/**
+	 * Get leads that are not grabbed,
+	 * and not send as boss alert yet.
+	 */
+	public function getBossAlertLeads($seconds = 60)
+	{
+		$time = time() - $seconds;
+		$results = array();
+		
+		$sql = "SELECT *
+				FROM `{$this -> _prefix}59_leads`
+				WHERE `reserved_time` IS NULL
+					AND `boss_alert` = '0'
+					AND `created_time` < $time
+				";
+				
+		$results = $this -> _db -> get_results($sql, ARRAY_A);
+		
+		return $results;
+	}
+	
+	/**
+	 * Get leads that are not grabbed,
+	 * and alert the bosses once a day every day.
+	 */
+	public function getBossDailyAlerts()
+	{
+		$date = date('Y-m-d H:i:s');
+		$results = array();
+		
+		$sql = "SELECT *
+				FROM `{$this -> _prefix}59_leads`
+				WHERE `reserved_time` IS NULL
+					AND `boss_alert` = '1'
+				";
+				
+		$results = $this -> _db -> get_results($sql, ARRAY_A);
+		
+		return $results;
+	}
+	
+	/**
+	 * Flag to mark first alert
+	 */
+	public function bossAlerted(&$lead)
+	{
+		$this -> update(array('boss_alert' => 1), $lead['id']);
+	}
+	
+	/**
+	 * Increments the device notifications sent statistics
+	 */
+	public function agentNotified($lead)
+	{
+		if (!empty($lead) && !empty($lead['id']))
+		{
+			$count = $lead['agent_alert'];
+			$count++;
+			$this -> update(array('agent_alert' => $count), $lead['id']);
+		}
 	}
 	
 	/**

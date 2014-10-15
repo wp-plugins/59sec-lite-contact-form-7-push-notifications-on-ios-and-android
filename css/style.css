@@ -96,3 +96,5 @@ font-weight: bold;
 .sortable {	cursor:pointer;}
 .asc {background:url(../images/aup.png) 60% 60% no-repeat;}
 .desc {	background:url(../images/adown.png) 60% 60% no-repeat;}
+#sec59-subscribe { margin:5px; padding:10px; border:2px solid yellow; }
+#sec59-subscribe-thx { background:green; color: #ffffff; font-weight:bold; }
