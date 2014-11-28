@@ -11,22 +11,27 @@ Need conversions 21 times higher? Use the amazing 59sec. 59sec helps companies a
 
 == Description ==
 
-[youtube http://www.youtube.com/watch?v=XiLgtL4ZB2M]
+Hi. If you want to increase your sales conversion rate by more than 21 times, you really should answer your leads under 59 seconds, using 59sec wordpress plugin.
 
-**WOW FACT!**
-
-Answering a lead in 5 minutes vs 30 minutes means 21x MORE chances to close the sale!
+**WHY IS SO IMPORTANT TO ANSWER FAST?**
+Because answering a lead in 5 minutes vs 30 minutes means 21x MORE chances to close the sale!
  
 [Source: MIT & Kellogg study, published in Forbes](http://www.forbes.com/sites/marketshare/2012/05/22/when-it-comes-to-inbound-marketing-time-is-definitely-of-the-essence/)
+
 
 **59sec helps companies to answer leads/questions under 59 seconds!** 
 This will BOOST your conversion rates, because the potential clients will be blown away by your responsiveness and professionalism :)
 
 
-**AWESOME FEATURES**
+**SHORT VIDEO PRESENTATION 59sec**
+
+[youtube http://www.youtube.com/watch?v=WTS41xCZE1E]
+
+**AWESOME FEATURES of 59sec LITE**
 
 * Connects your site to your sales agents mobile devices ([iOS](https://itunes.apple.com/us/app/59sec/id851174210?mt=8), [Android](https://play.google.com/store/apps/details?id=com.kuantero.fiftyninesec) and soon, Windows).
 * Sends push notifications to your sales agents when a new lead is generated. You'll here a cool cash register sound each time you have a new lead
+[youtube http://www.youtube.com/watch?v=XiLgtL4ZB2M]
 * Reminders that you're wasting money: after 10 and 30 minutes since lead generation moment. In sales, speed is crucial!
 * Leads entry source: Contact Form 7 plugin 
 * Sales agents can grab and respond to leads from phone, tablet, computer. Super easy!
@@ -57,29 +62,6 @@ This will BOOST your conversion rates, because the potential clients will be blo
 
 When a new form is submitted, all sales agents get a push notification on their iOS and Android devices!
 Also, 59sec has a lead management procedure to help the sales team nurture the lead until it become a sale.
-
-
-**WHO IS USING 59sec**
-
-By Company Type:
-
-* Companies that receives online leads
-* Companies that wants a stronger differentiation point versus competition. And answering under 59 seconds is a GREAT differentiation!
-* PPC agencies (to help their clients convert more leads)
-
-
-By Department Type:
-
-* Sales (grab leads and call immediately) 
-* Support (answering fast to questions from users/clients)
-* Marketing (from research to activations)
-* PR (to quickly answer questions from bloggers or journalists) 
-* Logistics (to grab and deliver goods)
-
-
-**SHORT VIDEO PRESENTATION 59sec**
-
-[youtube http://www.youtube.com/watch?v=WTS41xCZE1E]
 
 
 **HOW IT WORKS (technically speaking)?**
