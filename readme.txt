@@ -6,7 +6,7 @@ Requires at least: 3.3
 Tested up to: 4.1  
 Stable tag: 3.4
 
-Need conversions 21 times higher? Use the amazing 59sec. 59sec helps companies answer leads under 59 seconds, boosting sales conversions! Test it now!
+Get push notifications on your mobile devices (iOS, Android and Windows Phone) when you get new leads. Super useful tool to boost your productivity!
 
 
 == Description ==
