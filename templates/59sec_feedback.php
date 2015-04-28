@@ -18,15 +18,18 @@
 - sales managers,<br />
 - business owners,<br />
 - CEOs<br />
+- Google Adwords agencies<br />
+- marketplace owners
+<br />
 - and people interested in getting more results! :)</p>
 <p>At 59sec we really need your feedback. Your suggestions & comments..</p>
 <p>We are 100% committed to help your business grow, so you’ll be happy and recommend us further. :)
-59sec is a CRITICAL business service, so our dialog is more than needed.</p>
+59sec is a CRITICAL business service, so dialog is more than needed.</p>
 <p>So, please, talk to us:<br />
 <a href="mailto:go@59sec.com">go@59sec.com</a></p>
 <p>We’ll be happy to hear from you.</p>
 <p>
 Your truly,<br />
-Constantin Ferseta<br />
+<a href="https://www.59sec.com/us" target="_blank">Constantin Ferseta</a><br />
 Founder 59sec<br />
 </p>
