@@ -1,10 +1,10 @@
-=== THE Leads Management System: 59sec lite ===
+=== THE Leads Management System: 59sec LITE ===
 
 Contributors: kuantero
 Tags: leads, crm, clients, sales, contact form 7, cf 7, contact forms, forms, push notifications, ios, android, pus notification, contact form 7 push notifications, contact, counter, integration, iphone, mobile, notification, plugin, 59sec, 59 sec, leads management system, leads management
 Requires at least: 3.3  
-Tested up to: 4.1  
-Stable tag: 3.4
+Tested up to: 4.2.1  
+Stable tag: 3.4.1
 
 Get push notifications on your mobile devices (iOS, Android and Windows Phone) when you get new leads. Super useful tool to boost your productivity!
 
