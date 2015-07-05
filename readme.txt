@@ -15,7 +15,7 @@ Get push notifications on your mobile devices (iOS, Android and Windows Phone) w
 
 <b>Basically, we will whip your sales/support team to do their job properly and FOLLOW-UP the leads ASAP, not after hours or days!</b>
 
-<b>How the whipping goes? :)<b/>
+<b>How the whipping goes? :)</b>
 
 * Step 1. You install the plugin.
 
