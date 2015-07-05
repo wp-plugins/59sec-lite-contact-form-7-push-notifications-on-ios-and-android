@@ -11,7 +11,38 @@ Get push notifications on your mobile devices (iOS, Android and Windows Phone) w
 
 == Description ==
 
-Hi. If you want to increase your sales conversion rate by more than 21 times, you really should answer your leads under 59 seconds, using 59sec wordpress plugin.
+59sec LITE helps companies to answer leads generated with Contact Form 7 under 59 seconds, in order to boost conversions.
+
+<b>Basically, we’ll whip your sales/support team to do their job properly and FOLLOW-UP the leads ASAP, not after hours or days!</b>
+
+<b>How the whipping goes? :)<b/>
+
+* Step 1 – you install the plugin.
+
+* Step 2 – you install the 59sec mobile app on your sales people mobile devices.
+
+* Step 3 – it sends PUSH NOTIFICATIONS on your mobile devices (iOS, Android, Windows Phone) with your leads or questions from clients.
+
+* Step 4 – if the leads are not grabbed FAST, 59sec will make some followups.
+
+* Step 5 – if still the lead is not grabbed, then the boss is notified: “Yo, you are losing money. Why your team cannot answer fast a lead? Either they are overwhelmed and you should hire more, either they are losing time (most probably).”
+
+* Step 6 – everybody can see some cool statistics of response time. Who is lazy and who should get a bonus.
+
+Decreasing response time will boost your conversion rate! :)
+
+5 BIG BONUSES
+
+* 1. WOW notifications – cash register sound. So awesome that you’ll become addictive! :)
+
+* 2. Answering fast will make your clients fall of the chair. WOW effect.
+
+* 3. Better differentiation versus competition
+
+* 4. Better marketing ROI.
+
+* 5. Better sales conversion rate! Much better!!!
+
 
 **WHY IS SO IMPORTANT TO ANSWER FAST?**
 Because answering a lead in 5 minutes vs 30 minutes means 21x MORE chances to close the sale!
