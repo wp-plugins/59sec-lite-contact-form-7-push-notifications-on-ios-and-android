@@ -13,9 +13,10 @@ Get push notifications on your mobile devices (iOS, Android and Windows Phone) w
 
 59sec LITE helps companies to answer leads generated with Contact Form 7 under 59 seconds, in order to boost conversions.
 
-<b>Basically, we will whip your sales/support team to do their job properly and FOLLOW-UP the leads ASAP, not after hours or days!</b>
+**Basically, we will whip your sales/support team to do their job properly and FOLLOW-UP the leads ASAP, not after hours or days!**
 
-<b>How the whipping goes? :)</b>
+
+**How the whipping goes? :)**
 
 * Step 1. You install the plugin.
 
@@ -31,7 +32,8 @@ Get push notifications on your mobile devices (iOS, Android and Windows Phone) w
 
 Decreasing response time will boost your conversion rate! :)
 
-<b>5 BIG BONUSES</b>
+
+**5 BIG BONUSES**
 
 * 1. WOW notifications. A cash register sound. So awesome that you will become addictive! :)
 
