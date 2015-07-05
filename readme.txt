@@ -13,27 +13,27 @@ Get push notifications on your mobile devices (iOS, Android and Windows Phone) w
 
 59sec LITE helps companies to answer leads generated with Contact Form 7 under 59 seconds, in order to boost conversions.
 
-<b>Basically, we’ll whip your sales/support team to do their job properly and FOLLOW-UP the leads ASAP, not after hours or days!</b>
+<b>Basically, we will whip your sales/support team to do their job properly and FOLLOW-UP the leads ASAP, not after hours or days!</b>
 
 <b>How the whipping goes? :)<b/>
 
-* Step 1 – you install the plugin.
+* Step 1. You install the plugin.
 
-* Step 2 – you install the 59sec mobile app on your sales people mobile devices.
+* Step 2. You install the 59sec mobile app on your sales people mobile devices.
 
-* Step 3 – it sends PUSH NOTIFICATIONS on your mobile devices (iOS, Android, Windows Phone) with your leads or questions from clients.
+* Step 3. It sends PUSH NOTIFICATIONS on your mobile devices (iOS, Android, Windows Phone) with your leads or questions from clients.
 
-* Step 4 – if the leads are not grabbed FAST, 59sec will make some followups.
+* Step 4. If the leads are not grabbed FAST, 59sec will make some followups.
 
-* Step 5 – if still the lead is not grabbed, then the boss is notified: “Yo, you are losing money. Why your team cannot answer fast a lead? Either they are overwhelmed and you should hire more, either they are losing time (most probably).”
+* Step 5. If the lead is still not grabbed, then the boss is notified: <i>Yo, you are losing money. Why your team cannot answer fast a lead? Either they are overwhelmed and you should hire more, either they are losing time (most probably).</i>
 
-* Step 6 – everybody can see some cool statistics of response time. Who is lazy and who should get a bonus.
+* Step 6. Everybody can see some cool statistics of response time. Who is lazy and who should get a bonus.
 
 Decreasing response time will boost your conversion rate! :)
 
-5 BIG BONUSES
+<b>5 BIG BONUSES</b>
 
-* 1. WOW notifications – cash register sound. So awesome that you’ll become addictive! :)
+* 1. WOW notifications. A cash register sound. So awesome that you will become addictive! :)
 
 * 2. Answering fast will make your clients fall of the chair. WOW effect.
 
