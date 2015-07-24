@@ -13,7 +13,9 @@ Get push notifications on your mobile devices (iOS, Android and Windows Phone) w
 
 59sec LITE helps companies to answer leads generated with Contact Form 7 under 59 seconds, in order to boost conversions.
 
-**Basically, we will whip your sales/support team to do their job properly and FOLLOW-UP the leads ASAP, not after hours or days!**
+**Basically, we will 'whip' your sales/support team to do their job properly and FOLLOW-UP the leads ASAP, not after hours or days!:)**
+
+[youtube http://www.youtube.com/watch?v=x4m-Cc9mRm4]
 
 
 **How the whipping goes? :)**
@@ -56,9 +58,6 @@ Because answering a lead in 5 minutes vs 30 minutes means 21x MORE chances to cl
 This will BOOST your conversion rates, because the potential clients will be blown away by your responsiveness and professionalism :)
 
 
-**SHORT VIDEO PRESENTATION 59sec**
-
-[youtube http://www.youtube.com/watch?v=WTS41xCZE1E]
 
 **AWESOME FEATURES of 59sec LITE**
 
