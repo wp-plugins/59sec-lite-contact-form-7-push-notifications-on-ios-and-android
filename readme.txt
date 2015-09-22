@@ -6,14 +6,17 @@ Requires at least: 3.3
 Tested up to: 4.3.1  
 Stable tag: 3.4.1
 
-This plugin will boost your conversion rates, generate WOW factor among clients and differentiate you vs competitors by doing one simple thing: making your sales team FASTER!
+This plugin will boost your conversion rates, generate WOW factor among clients and differentiate you vs competitors by doing one simple thing: 
 
 
 == Description ==
 
-59sec LITE does wonders. But first...
+59sec will make your sales team FASTER! That means follow up the leads much faster :)
 
-**DID YOU KNOW THIS?**
+And it does wonders. But first...
+
+
+**DID YOU KNOW THIS FACT?**
 
 Follow up a lead in 5 minutes vs 30 minutes means 21x MORE chances to close the sale!
  
@@ -32,6 +35,17 @@ Follow up a lead in 5 minutes vs 30 minutes means 21x MORE chances to close the 
 * #3. WOW factor - your clients will LOVE you! Exceed expectations by being insanely fast with 59sec.
 * #4. A happy face each time you get a new push notification! The most awesome sound in the world? Cash flowing in.
 
+**HOW DOES IT WORK?**
+ 
+* #1. The potential client generates the lead on your website, via a Contact Form 7 plugin
+* #2. All of you, sales agents/bosses gets notified 
+* #3. First agent available, from mobile or from computer, GRABS the lead
+* #4. The lead is assigned to him/her. The counter stops. The agent calls the client. The client gets SHOCKED :)
+* #5. After the call finishes, the agents opens the CRM (59sec CRM or his CRM)
+* #6. If a lead is not grabbed in due time, the agents gets reminders on mobile/email. 
+* #7. If a lead is not grabbed in 30 minutes, the boss receives a BOSS NOTIFICATION: "Hey, you invest in marketing and your team could not grabbed the lead. You are wasting money. Check out to see if they are overwhelmed."
+
+Bonus, you have statistics and many other cool features.
 
 **AWESOME FEATURES of 59sec LITE**
 
