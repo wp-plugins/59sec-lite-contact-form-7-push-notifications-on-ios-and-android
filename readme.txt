@@ -3,26 +3,34 @@
 Contributors: kuantero
 Tags: leads, crm, clients, sales, contact form 7, cf 7, contact forms, forms, push notifications, ios, android, pus notification, contact form 7 push notifications, contact, counter, integration, iphone, mobile, notification, plugin, 59sec, 59 sec, leads management system, leads management
 Requires at least: 3.3  
-Tested up to: 4.3  
+Tested up to: 4.3.1  
 Stable tag: 3.4.1
 
-Get push notifications on your mobile devices (iOS, Android and Windows Phone) when you get new leads. Super useful tool to boost your productivity!
+This plugin will boost your conversion rates, generate WOW factor among clients and differentiate you vs competitors by doing one simple thing: making your sales team FASTER!
 
 
 == Description ==
 
-59sec LITE helps companies to follow up leads generated with Contact Form 7 under 59 seconds, in order to boost conversions.
+59sec LITE does wonders. But first...
+
+**DID YOU KNOW THIS?**
+
+Follow up a lead in 5 minutes vs 30 minutes means 21x MORE chances to close the sale!
+ 
+[Source: MIT & Kellogg study, published in Forbes](http://www.forbes.com/sites/marketshare/2012/05/22/when-it-comes-to-inbound-marketing-time-is-definitely-of-the-essence/)
+
 
 **Basically, we will 'whip' your sales/support team to do their job properly and FOLLOW-UP the leads ASAP, not after hours or days!:)**
 
 [youtube http://www.youtube.com/watch?v=x4m-Cc9mRm4]
 
 
-**WHY IS SO IMPORTANT TO ANSWER FAST?**
-Because answering a lead in 5 minutes vs 30 minutes means 21x MORE chances to close the sale!
- 
-[Source: MIT & Kellogg study, published in Forbes](http://www.forbes.com/sites/marketshare/2012/05/22/when-it-comes-to-inbound-marketing-time-is-definitely-of-the-essence/)
+**YOU'LL GET 4 BIG BENEFITS:**
 
+* #1. Earn THOUSANDS of extra $$$ each month! Faster Response Times = More Money For You.
+* #2. MEGA differentiation versus your competition! Be faster and more responsive than the others and clients will see it.
+* #3. WOW factor - your clients will LOVE you! Exceed expectations by being insanely fast with 59sec.
+* #4. A happy face each time you get a new push notification! The most awesome sound in the world? Cash flowing in.
 
 
 **AWESOME FEATURES of 59sec LITE**
