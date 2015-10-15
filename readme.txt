@@ -1,6 +1,6 @@
 === THE Leads Management System: 59sec LITE ===
 
-Contributors: kuantero
+Contributors: 59sec
 Tags: leads, crm, clients, sales, contact form 7, cf 7, contact forms, forms, push notifications, ios, android, pus notification, contact form 7 push notifications, contact, counter, integration, iphone, mobile, notification, plugin, 59sec, 59 sec, leads management system, leads management
 Requires at least: 3.3  
 Tested up to: 4.3.1  
@@ -11,9 +11,14 @@ This plugin will boost your conversion rates, generate WOW factor among clients 
 
 == Description ==
 
-59sec will make your sales team FASTER! That means follow up the leads much faster :)
+59sec Helps Companies To Follow Up Leads Under 59 Seconds!
 
-And it does wonders. But first...
+**YOU'LL GET 4 BIG BENEFITS:**
+
+* #1. Earn THOUSANDS of extra $$$ each month! Faster Response Times = More Money For You.
+* #2. MEGA differentiation versus your competition! Be faster and more responsive than the others and clients will see it.
+* #3. WOW factor - your clients will LOVE you! Exceed expectations by being insanely fast with 59sec.
+* #4. A happy face each time you get a new push notification! The most awesome sound in the world? Cash flowing in.
 
 
 **DID YOU KNOW THIS FACT?**
@@ -25,15 +30,9 @@ Follow up a lead in 5 minutes vs 30 minutes means 21x MORE chances to close the 
 
 **Basically, we will 'whip' your sales/support team to do their job properly and FOLLOW-UP the leads ASAP, not after hours or days!:)**
 
-[youtube http://www.youtube.com/watch?v=x4m-Cc9mRm4]
+[youtube https://www.youtube.com/watch?v=p8XWxt8-arg]
 
 
-**YOU'LL GET 4 BIG BENEFITS:**
-
-* #1. Earn THOUSANDS of extra $$$ each month! Faster Response Times = More Money For You.
-* #2. MEGA differentiation versus your competition! Be faster and more responsive than the others and clients will see it.
-* #3. WOW factor - your clients will LOVE you! Exceed expectations by being insanely fast with 59sec.
-* #4. A happy face each time you get a new push notification! The most awesome sound in the world? Cash flowing in.
 
 **HOW DOES IT WORK?**
  
@@ -49,7 +48,7 @@ Bonus, you have statistics and many other cool features.
 
 **AWESOME FEATURES of 59sec LITE**
 
-* Connects your site to your sales agents mobile devices ([iOS](https://itunes.apple.com/us/app/59sec/id851174210?mt=8), [Android](https://play.google.com/store/apps/details?id=com.kuantero.fiftyninesec) and soon, Windows).
+* Connects your site to your sales agents mobile devices ([iOS](https://itunes.apple.com/us/app/59sec/id851174210?mt=8), [Android](https://play.google.com/store/apps/details?id=com.kuantero.fiftyninesec) and Windows).
 * Sends push notifications to your sales agents when a new lead is generated. You'll here a cool cash register sound each time you have a new lead
 [youtube http://www.youtube.com/watch?v=XiLgtL4ZB2M]
 * Reminders that you're wasting money: after 10 and 30 minutes since lead generation moment. Also boss notifications. In sales, speed is crucial!
