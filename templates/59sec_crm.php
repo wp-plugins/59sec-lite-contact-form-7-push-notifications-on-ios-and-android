@@ -13,7 +13,7 @@
 	<li><?php echo $helpLink?></li>
 </ul>
 <h2>CRM</h2>
-Much more great features available in 59sec PRO version. <a href="http://www.59sec.com">Upgrade now!</a>
+Much more great features available in 59sec PRO version. <a href="https://www.59sec.biz/site/subscribe">Download it  now (you have 30 days to test it)!</a>
 <?php foreach ($items as $item):?>
 <?php if (!empty($forms) && in_array($item->id, $forms)):?>
 <?php

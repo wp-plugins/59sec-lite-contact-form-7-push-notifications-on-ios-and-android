@@ -13,23 +13,12 @@
 	<li><?php echo $helpLink?></li>
 </ul>
 <h2>Please Feedback!</h2>
- <p>Hello dear ...<br />
-- entrepreneurs,<br />
-- sales managers,<br />
-- business owners,<br />
-- CEOs<br />
-- Google Adwords agencies<br />
-- marketplace owners
-<br />
-- and people interested in getting more results! :)</p>
-<p>At 59sec we really need your feedback. Your suggestions & comments..</p>
-<p>We are 100% committed to help your business grow, so you’ll be happy and recommend us further. :)
-59sec is a CRITICAL business service, so dialog is more than needed.</p>
-<p>So, please, talk to us:<br />
-<a href="mailto:go@59sec.com">go@59sec.com</a></p>
-<p>We’ll be happy to hear from you.</p>
-<p>
-Your truly,<br />
+ <p>Hello Wordpress fans (like me)</p>
+ <p>I am Constantin Ferseta, founder of 59sec. Thank you for using my &quot;baby&quot;. :)<br />
+   As we really want 59sec (lite/pro/enterprise) to work for you, to help you make more money, we need your feedback. Praizes, rotten tomatos, bug reports, features request, etc, etc..</p>
+<p>Can you please share with me your thoughts? Any feedback would be highly appreciated!</p>
+<p>My email is <strong>noro@59sec.com</strong>. So, hit me:) Thank you in advance.</p>
+<p>Have a great day<br />
 <a href="https://www.59sec.com/us" target="_blank">Constantin Ferseta</a><br />
-Founder 59sec<br />
+ 59sec Founder<br />
 </p>

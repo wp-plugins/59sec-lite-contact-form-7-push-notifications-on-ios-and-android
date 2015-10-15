@@ -26,10 +26,9 @@
 			<td>
 				<p>
 				  <label>Explanation: You can define your own statuses for the grabbed leads  inside the 59sec CRM. In the LITE version you only have the default options. <br />
-				    <a href="http://www.59sec.com" target="_blank"><strong>Upgrade now to 59sec PRO version!</strong></a></label>
-				  
-		         <br />
-			    <a href="http://www.59sec.com">First month is FREE, no credit card needed, no strings attached! </a></p></td>
+				    <span class="description"><a href="https://www.59sec.biz/site/subscribe&quot;" target="_blank"><strong>Download now the 59sec PRO plugin!</strong></a> <br />
+                  <a href="http://www.59sec.com">First month is FREE to test. No credit card, no strings attached! </a>:)</span></label>
+				</p></td>
 		</tr>
 		<tr>
 			<th scope="row">Leads workflow</th>
@@ -78,9 +77,10 @@
 		<th scope="row">&nbsp;</th>
 			<td>
 				<label>Explanation: Do you want NOT to be waken up in the middle of the night by new leads?:) Define your working hours and working days.<br /></label>
-				<label><a href="http://www.59sec.com" target="_blank"><strong>Upgrade now to 59sec PRO version!</strong></a></label>
+				<span class="description">
+				<label><a href="https://www.59sec.biz/site/subscribe&quot;" target="_blank"><strong>Download now the 59sec PRO plugin!</strong></a></label>
                 <br />
-                <a href="http://www.59sec.com">First month is FREE, no credit card needed, no strings attached! </a></td>
+                <a href="http://www.59sec.com">First month is FREE to test. No credit card, no strings attached! </a>:)</span></td>
 	</table>
 	<?php submit_button(); ?>
 </form>

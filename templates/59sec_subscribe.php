@@ -15,7 +15,7 @@ $subscribe_mail = get_option('59sec_subscribe_mail', '');
 if (empty($subscribe_mail)):
 ?>
 <div id="sec59-subscribe">
-59sec is a business critical service.
+59sec is a  critical businessservice.
 Please make sure you are subscribed at our newsletter,
 in order not to miss an opportunity:
 <form id="subscribeForm" name="subscribeForm" method="post" action="">

@@ -19,10 +19,10 @@ Important!!! After grabbing the lead, call it immediately!
 	<?php include _59SEC_INCLUDE_PATH . '/templates/leads_tables.php'?>
 </div>
 <p>On 59sec LITE version you have only 20 leads per month available.  </p>
-<p>
-  <label><a href="http://www.59sec.com" target="_blank"><strong>Upgrade now to 59sec PRO version for UNLIMITED LEADS!</strong></a></label>
+<p><span class="description">
+  <label><a href="https://www.59sec.biz/site/subscribe&quot;" target="_blank"><strong>Download now the 59sec PRO plugin!</strong></a></label>
   <br />
-<a href="http://www.59sec.com">First month is FREE, no credit card needed, no strings attached! </a> </p>
+<a href="http://www.59sec.com">First month is FREE to test. No credit card, no strings attached! </a>:)</span></p>
 <script type="text/javascript">
 jQuery(document).ready(function() {
 	window.checkInterval = <?php echo $leadscheck?>;

@@ -16,10 +16,10 @@
 <p>Explanation: Wordpress administrators have full access by default, as sales manager! </p>
 <h3>Sales Agents</h3>
 <p>If you have sales agents, you should create normal &quot;subscribers&quot; wordpress users,  then check them here to grant them Agent Level access (Leads, Statistics, CRM). This way, they cannot mess up your site! :). This &quot;sales agents&quot; feature is available only for 59sec PRO.</p>
-<p>
-  <label><a href="http://www.59sec.com" target="_blank"><strong>Upgrade now to 59sec PRO version!</strong></a></label>
+<p><span class="description">
+  <label><a href="https://www.59sec.biz/site/subscribe&quot;" target="_blank"><strong>Download now the 59sec PRO plugin!</strong></a></label>
   <br />
-<a href="http://www.59sec.com">First month is FREE, no credit card needed, no strings attached! </a></p>
+<a href="http://www.59sec.com">First month is FREE to test. No credit card, no strings attached! </a>:)</span></p>
 <form name="capForm" method="post" action="">
 <table class="wp-list-table widefat fixed users" cellspacing="0">
 	<thead>

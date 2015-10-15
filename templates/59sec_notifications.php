@@ -25,9 +25,9 @@
 			<td>- sound<br />- pop-up alert<br />
 			  <p class="description">Explanation: during workhours you should instruct your sales agents to be logged in on the site, on the LEADS tab. When a new lead kicks in, the browser will play a sound + a warning pop-up will appear.</p>
 			  <p class="description">
-			    <label><a href="http://www.59sec.com" target="_blank"><strong>Upgrade now to 59sec PRO version!</strong></a></label>
+			    <label><a href=https://www.59sec.biz/site/subscribe" target="_blank"><strong>Download now the 59sec PRO plugin!</strong></a></label>
                 <br />
-              <a href="http://www.59sec.com">First month is FREE, no credit card needed, no strings attached! </a></p></td>
+              <a href="http://www.59sec.com">First month is FREE to test. No credit card, no strings attached! </a>:)</p></td>
 		</tr>
 		<tr>
 			<th scope="row"><h3>EMAIL NOTIFICATIONS</h3></th>
@@ -37,12 +37,12 @@
 			<th scope="row">&nbsp;</th>
 			<td>
 				<label>Explanation: You can set up more emails where to be notified that you have new leads.<br />
-				  <br />
-			    <a href="http://www.59sec.com" target="_blank"><strong>Upgrade now to 59sec PRO version!</strong></a></label>
+				  <br /></label>
+				<span class="description">
+				<label><a href="https://www.59sec.biz/site/subscribe&quot;" target="_blank"><strong>Download now the 59sec PRO plugin!</strong></a></label>
                 <br />
-                <a href="http://www.59sec.com">First month is FREE, no credit card needed, no strings attached! </a>
-                <label>                </label>
-			</td>
+                <a href="http://www.59sec.com">First month is FREE to test. No credit card, no strings attached! </a></span>				<label>                </label>
+			:)</td>
 		</tr>
 		<tr>
 			<th scope="row"><h3>BOSS NOTIFICATION</h3></th>
@@ -94,17 +94,14 @@
 			</td>
 		</tr>
 		<tr>
-			<th scope="row"><h3>SMS NOTIFICATIONS</h3></th>
+			<th scope="row"><h3>WINDOWS PHONE NOTIFICATIONS</h3></th>
 			<td>&nbsp;</td>
 		</tr>
 		<tr>
 			<th scope="row">&nbsp;</th>
-			<td><p>(under development)</p>
-		    <p>It will be available for 59sec PRO version.</p>
-		    <p>
-		      <label><a href="http://www.59sec.com" target="_blank"><strong>Upgrade now to 59sec PRO version!</strong></a></label>
-              <br />
-            <a href="http://www.59sec.com">First month is FREE, no credit card needed, no strings attached! </a></p></td>
+			<td><p>Go to &quot;<a href="?page=59sec_users">Users</a>&quot; tab to grab your own secret key. Also from there you can take the Secret Keys for each sales person.
+			    </p>
+            </p></td>
 		</tr>
 	</table>
 	<?php submit_button()?>

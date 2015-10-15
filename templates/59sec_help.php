@@ -14,7 +14,7 @@
 </ul>
 <h2>Help</h2>
 <h3>What does the 59sec LITE do?</h3>
-<p>59sec LITE helps companies to answer leads (or new contacts) under 1 minute (59 seconds). Why? Because studies done by MIT and Kellogg (<a href="http://www.forbes.com/sites/marketshare/2012/05/22/when-it-comes-to-inbound-marketing-time-is-definitely-of-the-essence/" target="_blank">published here on Forbes</a>) show that answering a lead in 5 minutes versus 30 seconds means 21x more chances to close the sale. So, we are helping you answer under 1 minute, not in 5. :)</p>
+<p>59sec LITE helps companies to answer leads (or new contacts) under 59 seconds. Why? Because studies done by MIT and Kellogg (<a href="http://www.forbes.com/sites/marketshare/2012/05/22/when-it-comes-to-inbound-marketing-time-is-definitely-of-the-essence/" target="_blank">published here on Forbes</a>) show that answering a lead in 5 minutes versus 30 seconds means 21x more chances to close the sale. So, we are helping you answer under 1 minute, not in 5. :)</p>
 <p><a href="http://www.59sec.com" target="_blank"><img src="<?php echo _59SEC_PLUGINS_URL?>images/SalesResponseRates1.png" width="912" height="538" alt="Why you should answer leads under 59sec" title="Why you should answer leads under 59sec"/></a></p>
 <h3>How it works (technically speaking)?</h3>
 <p>First you install the 59sec LITE wordpress plugin. Done!<br />
@@ -40,6 +40,7 @@ Suggestion: Make sure that you go on your iPhone, Settings/Notification Center/5
   <li>Because you'll get a lot of awsome extra features (and we are keep adding new ones - check the <a href="http://59sec.com/blog" target="_blank">59sec blog</a>!)
     <ol>
     <li>Multiple contact forms + email as entry sources</li>
+    <li>Unlimited leads (versus the 20 leads/month you have in the lite version)</li>
     <li>&quot;Don't Disturb Me&quot; notifications schedule</li>
     <li>CRM status update</li>
     <li>Site alert - sound + pop-up</li>
@@ -61,17 +62,6 @@ Suggestion: Make sure that you go on your iPhone, Settings/Notification Center/5
   <br />
 <a href="http://www.59sec.com">First month is FREE, no credit card needed, no strings attached! </a></p>
  
-<h3>How much does 59sec PRO costs?</h3>
-<p>First month is free. Then is $59/month.
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="ZE3R7RHUPFMPC">
-<table>
-<tr><td><input type="hidden" name="on0" value="Domain name:">Domain name:</td></tr><tr><td><input type="text" name="os0" maxlength="200"></td></tr>
-</table>
-<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-</form></p>
 <h3>I have more questions</h3>
 <p>Enter on <a href="http://www.59sec.com" target="_blank">59sec.com</a> for more details</p>
 <p>&nbsp;</p>
